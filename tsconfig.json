@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": false,
+        "outDir": "dist",
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "target": "es5",
+        "jsx": "react",
+        "jsxFactory": "h",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "sourceMap": false,
+        "baseUrl": "./",
+        "lib": ["ES2021"]
+    },
+    "include": ["src/"],
+    "exclude": ["node_modules"]
+}

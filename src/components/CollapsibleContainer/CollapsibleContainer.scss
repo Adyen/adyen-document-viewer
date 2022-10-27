@@ -1,0 +1,8 @@
+@import '../../style/mixins';
+
+.adv-collapsible-container {
+    @include adv-component-base;
+
+    overflow: hidden;
+    transition: height var(--adv-accordion-transition-duration) var(--adv-accordion-transition-function);
+}

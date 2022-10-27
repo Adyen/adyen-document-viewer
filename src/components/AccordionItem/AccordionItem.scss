@@ -1,0 +1,30 @@
+@import 'src/components/Accordion/Accordion.mixins';
+
+.adv-accordion__item {
+    @include adv-accordion__item;
+}
+
+.adv-accordion__item--open {
+    @include adv-accordion__item--open;
+}
+
+.adv-accordion__header {
+    @include adv-accordion__header;
+}
+
+.adv-accordion__title-wrapper {
+    @include adv-accordion__title-wrapper;
+}
+
+.adv-accordion__title {
+    @include adv-accordion__title;
+}
+
+
+.adv-accordion__toggle {
+    @include adv-accordion__toggle;
+}
+
+.adv-accordion__content {
+    @include adv-accordion__content;
+}

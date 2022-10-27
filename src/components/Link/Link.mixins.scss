@@ -1,0 +1,63 @@
+@import 'src/style/mixins';
+
+@mixin adv-link {
+    @include adv-component-base;
+
+    background-color: var(--adv-link-background-color);
+    border: 0;
+    color: var(--adv-link-color);
+    cursor: pointer;
+    display: inline;
+    padding: 0;
+    text-decoration: var(--adv-link-text-decoration);
+    vertical-align: baseline;
+
+    &:hover {
+        text-decoration: var(--adv-link-hover-text-decoration);
+    }
+
+    &:active {
+        color: var(--adv-link-active-color);
+    }
+
+    &:focus {
+        outline: var(--adv-link-focus-outline);
+        text-decoration: var(--adv-link-hover-text-decoration);
+    }
+
+    &:visited {
+        color: var(--adv-link-visited-color);
+    }
+}
+
+@mixin adv-link--inherit {
+    &,
+    &:hover,
+    &:active,
+    &:visited {
+        color: var(--adv-link-inherit-color);
+        font-size: var(--adv-link-inherit-font-size);
+        font-weight: inherit;
+    }
+}
+
+@mixin adv-link--underline {
+    text-decoration: underline;
+
+    &,
+    &:active,
+    &:visited {
+        color: var(--adv-link-underline-color);
+    }
+
+    &:hover {
+        color: var(--adv-text-color);
+    }
+}
+
+@mixin adv-link__text {
+    @include adv-link--inherit;
+
+    display: inline;
+    vertical-align: baseline;
+}

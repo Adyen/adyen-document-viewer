@@ -1,0 +1,63 @@
+@import 'src/style/mixins';
+
+@mixin adv-table {
+    @include adv-component-base;
+
+    border: var(--adv-table-border);
+    border-collapse: collapse;
+    border-spacing: 0;
+    line-height: var(--adv-table-line-height);
+    margin: var(--adv-table-margin);
+    padding: var(--adv-table-padding);
+    text-align: left;
+    width: var(--adv-table-width);
+}
+
+@mixin adv-table--condensed (
+    $cell-selector: '.adv-table__cell',
+    $checkbox-cell-selector: '.adv-table__checkbox-cell') {
+    #{$cell-selector} {
+        font-size: var(--adv-table-condensed-font-size);
+        padding: var(--adv-table-condensed-cell-padding);
+    }
+
+}
+
+@mixin adv-table-vertical-align {
+    vertical-align: var(--adv-table-vertical-align);
+}
+
+@mixin adv-table__body ($row-element: '.adv-table__row') {
+    @include adv-table-vertical-align;
+
+    #{$row-element}:hover {
+        @include adv-table__row--changed;
+    }
+}
+
+@mixin adv-table__row {
+    @include adv-table-vertical-align;
+
+    border-bottom: var(--adv-table-row-border);
+}
+
+@mixin adv-table__row--changed {
+    background-color: var(--adv-table-row-changed-background-color);
+}
+
+@mixin adv-table__cell--first-column {
+    padding-left: var(--adv-table-first-column-padding-left);
+}
+
+@mixin adv-table__cell {
+    border-left: var(--adv-border-width) solid transparent;
+    border-right: var(--adv-border-width) solid transparent;
+    overflow: auto;
+    padding: var(--adv-table-cell-padding);
+    text-align: var(--adv-table-cell-text-align);
+    vertical-align: inherit;
+
+    &:first-child {
+        @include adv-table__cell--first-column;
+    }
+}

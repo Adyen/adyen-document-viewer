@@ -1,0 +1,21 @@
+@mixin adv-component-base {
+    color: var(--adv-text-color);
+    font-family: var(--adv-text-font-family);
+    font-size: var(--adv-text-font-size-medium);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: var(--adv-text-font-weight-regular);
+    line-height: var(--adv-text-line-height);
+
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+}
+
+@mixin adv-focus-ring {
+    box-shadow: 0 0 0 var(--adv-focus-ring-distance) var(--adv-focus-ring-background-color), 0 0 0 var(--adv-focus-ring-width) var(--adv-focus-ring-color);
+    transition: var(--adv-focus-ring-transition-duration) var(--adv-focus-ring-timing-function);
+    transition-property: box-shadow;
+}
