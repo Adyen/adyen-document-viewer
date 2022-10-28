@@ -8,7 +8,7 @@
   "version": "1.0.0",
   "description": "Adyen Document Viewer",
   "main": "./dist/adyen-document-viewer.min.js",
-  "types": "./dist/adyen-document-viewer.d.ts",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "clean": "rm -rf dist",
     "start": "cross-env NODE_ENV=development webpack serve --config=webpack.dev.js",
