@@ -54,6 +54,3 @@ export type WeblinkProps = Weblink;
 export type ListProps = List;
 export type TableProps = Table;
 export type InternalReferenceProps = InternalReference;
-
-// Target
-export type target = HTMLElement | string;

@@ -3,7 +3,8 @@ if (process.env.NODE_ENV === 'development') {
 }
 import { h, render } from 'preact';
 import DocumentViewer from './DocumentViewer';
-import { target } from './types';
+
+type target = HTMLElement | string;
 
 export default class AdyenDocumentViewer {
     private readonly target: target;
