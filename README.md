@@ -4,9 +4,9 @@ Adyen Document Viewer provides you with a flexible way of rendering Adyen-genera
 
 ## Installation
 
-### Node package manager
+### Node package manager (recommended)
 
-1. Install the package
+1. Install the package using [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
     ```sh
     npm install @adyen/adyen-document-viewer --save
@@ -18,20 +18,31 @@ Adyen Document Viewer provides you with a flexible way of rendering Adyen-genera
     import AdyenDocumentViewer from '@adyen/adyen-document-viewer';
     import '@adyen/adyen-document-viewer/dist/adyen-document-viewer.min.css'; 
     ```
-   
-3. Initialize it using a `querySelector` string or `HTMLElement`
+
+### CDN
+
+Include the script and stylesheet to a `.html` file
+
+```html
+<script src="https://unpkg.com/@adyen/adyen-document-viewer@^1.0.0"></script>
+<link rel="stylesheet" href="https://unpkg.com/@adyen/adyen-document-viewer@^1.0.0/dist/adyen-document-viewer.min.css">
+```
+
+**NOTE:** By choosing this method, `AdyenDocumentViewer` class will become available globally in your application.
+
+## Usage
+
+1. Create an instance of `AdyenDocumentViewer` using a `querySelector` string or `HTMLElement`
 
     ```js
     const documentViewer = new AdyenDocumentViewer('#test');
     ```
 
-4. Call the `render` method, providing the JSON as parameter
+2. Call the `render` method, passing the JSON as parameter
 
     ```js
     documentViewer.render(jsonResponse);
     ```
-
-### CDN (WIP)
 
 ## Styling 
 
