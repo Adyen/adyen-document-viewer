@@ -236,8 +236,11 @@ To run the development environment:
 
 ## Support
 
-If you have a feature request, or spotted a bug or a technical problem, [contact our support team](https://support.adyen.com/).
+If you have a feature request, or spotted a bug or a technical problem, [contact our support team](https://www.adyen.help/hc/en-us/requests/new).
+
+## Contributing
+We strongly encourage you to contribute to our repository. Find out more in our [contribution guidelines](https://github.com/Adyen/.github/blob/master/CONTRIBUTING.md).
 
 ## License
 
-This repository is available under the [MIT license](LICENSE).
+MIT license. For more information, see the [License](LICENSE) file.
