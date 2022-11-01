@@ -61,7 +61,9 @@
   },
   "license": "MIT",
   "files": [
-    "dist",
+    "dist/adyen-document-viewer.min.js",
+    "dist/adyen-document-viewer.min.css",
+    "dist/index.d.ts",
     "LICENSE",
     "README"
   ]

@@ -243,4 +243,4 @@ We strongly encourage you to contribute to our repository. Find out more in our 
 
 ## License
 
-MIT license. For more information, see the [License](LICENSE) file.
+MIT license. For more information, see the [LICENSE](LICENSE) file.
