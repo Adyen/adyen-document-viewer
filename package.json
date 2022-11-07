@@ -2,8 +2,10 @@
   "name": "@adyen/adyen-document-viewer",
   "keywords": [
     "adyen",
-    "adyen-document-viewer",
-    "components"
+    "document",
+    "renderer",
+    "viewer",
+    "adyen-document-viewer"
   ],
   "version": "1.0.0",
   "description": "Adyen Document Viewer",
@@ -59,7 +61,11 @@
     "core-js": "^3.20.2",
     "preact": "^10.5.15"
   },
-  "license": "MIT",
+  "license": "SEE LICENSE IN LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Adyen/adyen-document-viewer.git"
+  },
   "files": [
     "dist/adyen-document-viewer.min.js",
     "dist/adyen-document-viewer.min.css",
