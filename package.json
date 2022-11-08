@@ -54,9 +54,7 @@
     "webpack": "^5.61.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.4.0",
-    "webpack-merge": "^5.8.0"
-  },
-  "dependencies": {
+    "webpack-merge": "^5.8.0",
     "classnames": "^2.3.1",
     "core-js": "^3.20.2",
     "preact": "^10.5.15"
