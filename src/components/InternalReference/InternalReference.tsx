@@ -1,6 +1,6 @@
 import { h } from 'preact';
 import { InternalReferenceProps } from '../../types';
-import LinkButton from '../LinkButton';
+import LinkButton from '../LinkButton/LinkButton';
 import { getScrollParent } from '../../utils/scroll';
 
 export default function InternalReference({ referencedLabel, displayText }: InternalReferenceProps) {

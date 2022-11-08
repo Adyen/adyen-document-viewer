@@ -3,7 +3,7 @@ import { SectionProps } from '../../types';
 import Heading from '../Heading/Heading';
 import Text from '../Text/Text';
 import './Section.scss';
-import AccordionItem from '../AccordionItem';
+import AccordionItem from '../AccordionItem/AccordionItem';
 import ContentElements from '../ContentElements/ContentElements';
 
 export default function Section({ title, label, isTopLevel, contentElements }: SectionProps) {

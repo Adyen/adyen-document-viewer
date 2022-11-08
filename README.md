@@ -1,6 +1,6 @@
 ## Adyen Document Viewer
 
-Adyen Document Viewer provides you with a flexible way of rendering Adyen-generated JSON documents, which can be embedded in your website.
+Adyen Document Viewer provides you with a flexible way of rendering Adyen-generated documents, which can be embedded in your website.
 
 ## Installation
 

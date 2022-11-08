@@ -1,5 +1,5 @@
 import { ComponentChildren } from 'preact';
-import AccordionItem from '../AccordionItem';
+import AccordionItem from '../AccordionItem/AccordionItem';
 
 export interface AccordionProps {
     children: ComponentChildren;

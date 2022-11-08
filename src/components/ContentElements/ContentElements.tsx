@@ -1,7 +1,7 @@
 import { h, VNode } from 'preact';
 import { ContentElementsProps, ElementTypes } from '../../types';
 import { getUniqueId } from '../../utils/id-generator';
-import Accordion from '../Accordion';
+import Accordion from '../Accordion/Accordion';
 import Chapter from '../Chapter/Chapter';
 import Section from '../Section/Section';
 import Paragraph from '../Paragraph/Paragraph';

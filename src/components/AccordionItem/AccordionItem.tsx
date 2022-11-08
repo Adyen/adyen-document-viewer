@@ -1,8 +1,8 @@
 import { h } from 'preact';
 import useAccordionContext from './useAccordionContext';
 import { AccordionItemProps } from './types';
-import CollapsibleContainer from '../CollapsibleContainer';
-import Icon from '../Icon';
+import CollapsibleContainer from '../CollapsibleContainer/CollapsibleContainer';
+import Icon from '../Icon/Icon';
 import { getUniqueId } from '../../utils/id-generator';
 import { useState, useEffect } from 'preact/hooks';
 import { AccordionContextType, AccordionItem } from '../Accordion/types';
