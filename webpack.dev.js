@@ -14,7 +14,7 @@ module.exports = merge(common, {
         new ESLintPlugin({ extensions: ['ts', 'tsx', 'js'] }),
         new PreactRefreshWebpackPlugin(),
         new StylelintPlugin(),
-        new HTMLWebpackPlugin({ template: './public/index.html', inject: 'body' })
+        new HTMLWebpackPlugin({ template: './playground/index.html', inject: 'body' })
     ],
     devtool: 'inline-source-map',
     devServer: {
