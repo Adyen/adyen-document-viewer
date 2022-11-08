@@ -32,16 +32,16 @@ Include the script and stylesheet to a `.html` file
 
 ## Usage
 
-1. Create an instance of `AdyenDocumentViewer` using a `querySelector` string or `HTMLElement`
+1. The component requires an HTML element to render its contents. Create an instance of `AdyenDocumentViewer` and pass the HTML element itself or a `querySelector` string value which targets it
 
     ```js
     const documentViewer = new AdyenDocumentViewer('#test');
     ```
 
-2. Call the `render` method, passing the JSON as parameter
+2. Call the `render` method, and pass the document as parameter
 
     ```js
-    documentViewer.render(jsonResponse);
+    documentViewer.render(document);
     ```
 
 ## Styling 
@@ -69,11 +69,11 @@ Adyen Document Viewer is themeable and uses CSS variables that can be overridden
 ### Available CSS variables
 ```css
 /* Colors */
---adv-color-white: #fff; // backgrounds
---adv-color-black: #00112c; // text color
---adv-color-grey-10: #f3f6f9; // background, hover
---adv-color-grey-20: #dce0e5; // borders, active
---adv-color-blue: #06f; // links
+--adv-color-white: #fff; /* backgrounds  */
+--adv-color-black: #00112c; /* text color  */
+--adv-color-grey-10: #f3f6f9; /* background, hover */
+--adv-color-grey-20: #dce0e5; /* borders, active  */
+--adv-color-blue: #06f; /* links */
 
 /* Background */
 --adv-background-color: var(--adv-color-white);
