@@ -67,167 +67,142 @@ Adyen Document Viewer is themeable and uses CSS variables that can be overridden
    ```
 
 ### Available CSS variables
+```css
+/* Colors */
+--adv-color-white: #fff; // backgrounds
+--adv-color-black: #00112c; // text color
+--adv-color-grey-10: #f3f6f9; // background, hover
+--adv-color-grey-20: #dce0e5; // borders, active
+--adv-color-blue: #06f; // links
 
-* Colors
-   ```css
-    --adv-color-white
-    --adv-color-black
-    --adv-color-grey-10
-    --adv-color-grey-20
-    --adv-color-blue
-   ```
-* Background 
-   ```css
-    --adv-background-color
-   ```
-* Fonts
-   ```css
-   --adv-text-font-family
-   --adv-text-color
-   --adv-text-font-weight-regular
-   --adv-text-font-weight-semi-bold
-   --adv-text-line-height
-   --adv-text-font-size-medium
-   --adv-text-font-size-small
-   ```
-  
-* Borders
-   ```css
-   --adv-border-width
-   --adv-border-style
-   --adv-border-color
-   --adv-border-radius
-   ```
+/* Background */
+--adv-background-color: var(--adv-color-white);
 
-* Transition
-   ```css
-   --adv-transition-duration
-   --adv-transition-function
-   ```
-   
-* Focus ring
-   ```css
-   --adv-focus-ring-transition-duration
-   --adv-focus-ring-timing-function
-   --adv-focus-ring-color
-   --adv-focus-ring-distance
-   --adv-focus-ring-width
-   --adv-focus-ring-z-index
-   --adv-focus-ring-background-color
-   ```
-  
-* Spacing
-   ```css
-   --adv-spacing-0
-   --adv-spacing-2
-   --adv-spacing-4
-   --adv-spacing-8
-   --adv-spacing-12
-   --adv-spacing-16
-   --adv-spacing-24
-   --adv-spacing-32
-   --adv-spacing-40
-   --adv-spacing-48
-   ```
-  
-* Accordion
-   ```css
-   --adv-accordion-border-radius
-   --adv-accordion-item-border-color
-   --adv-accordion-item-border-width
-   --adv-accordion-between-items-border-color
-   --adv-accordion-header-color
-   --adv-accordion-header-padding
-   --adv-accordion-header-font-weight
-   --adv-accordion-header-hover-background-color
-   --adv-accordion-header-active-background-color
-   --adv-accordion-header-border-radius
-   --adv-accordion-title-color
-   --adv-accordion-toggle-margin
-   --adv-accordion-toggle-padding
-   --adv-accordion-toggle-width
-   --adv-accordion-content-margin
-   --adv-accordion-content-padding
-   --adv-accordion-content-closed-margin
-   --adv-accordion-transition-duration
-   --adv-accordion-transition-function
-   --adv-accordion-transition-property
-   --adv-accordion-css-animated-max-height
-   --adv-accordion-css-animated-transition-duration
-   --adv-accordion-css-animated-transition-property
-   ``` 
-  
-* Heading  
-   ```css
-   --adv-heading-font-size
-   --adv-heading-font-weight
-   --adv-heading-line-height
-   --adv-heading-2-font-size
-   --adv-heading-2-font-weight
-   --adv-heading-2-line-height
-  ```
+/* Fonts */
+--adv-text-font-family: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen, ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+--adv-text-color: var(--adv-color-black);
+--adv-text-font-weight-regular: 400;
+--adv-text-font-weight-semi-bold: 600;
+--adv-text-line-height: 1.4;
+--adv-text-font-size-medium: 15px;
+--adv-text-font-size-small: 13px;
 
-* Icon
-   ```css
-   --adv-icon-color
-   ```
+/* Borders */
+--adv-border-width: 1px;
+--adv-border-style: solid;
+--adv-border-color: var(--adv-color-grey-20);
+--adv-border-radius: 6px;
 
-* Link
-   ```css
-   --adv-link-color
-   --adv-link-background-color
-   --adv-link-text-decoration
-   --adv-link-hover-text-decoration
-   --adv-link-active-color
-   --adv-link-focus-outline
-   --adv-link-visited-color
-   --adv-link-inherit-font-size
-   --adv-link-inherit-color
-   --adv-link-underline-color
-   ```
+/* Transition */
+--adv-transition-duration: 0.1s;
+--adv-transition-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
-* List
-   ```css
-   --adv-list-margin
-   --adv-list-padding
-   --adv-list-nested-padding
-   --adv-list-item-padding
-   --adv-list-no-markers-padding
-   --adv-list-no-markers-list-style
-   ```
+/* Focus ring */
+--adv-focus-ring-transition-duration: var(--adv-transition-duration);
+--adv-focus-ring-timing-function: var(--adv-transition-function);
+--adv-focus-ring-color: rgba(0, 102, 255, 0.4);
+--adv-focus-ring-distance: 1px;
+--adv-focus-ring-width: 3px;
+--adv-focus-ring-z-index: 1;
+--adv-focus-ring-background-color: var(--adv-color-white);
 
-* Section
-   ```css
-   --adv-section-background-color
-   --adv-section-border-radius
-   --adv-section-margin
-   --adv-section-padding
-   ```
+/* Spacing */
+--adv-spacing-0: 0;
+--adv-spacing-2: 2px;
+--adv-spacing-4: 4px;
+--adv-spacing-8: 8px;
+--adv-spacing-12: 12px;
+--adv-spacing-16: 16px;
+--adv-spacing-24: 24px;
+--adv-spacing-32: 32px;
+--adv-spacing-40: 40px;
+--adv-spacing-48: 48px;
 
-* Table
-   ```css
-   --adv-table-width
-   --adv-table-margin
-   --adv-table-padding
-   --adv-table-border
-   --adv-table-vertical-align
-   --adv-table-line-height
-   --adv-table-row-border-width
-   --adv-table-row-border-style
-   --adv-table-row-border-color
-   --adv-table-row-border
-   --adv-table-row-changed-background-color
-   --adv-table-cell-padding-top
-   --adv-table-cell-padding-right
-   --adv-table-cell-padding-bottom
-   --adv-table-cell-padding-left
-   --adv-table-cell-padding
-   --adv-table-cell-text-align
-   --adv-table-first-column-padding-left
-   --adv-table-condensed-cell-padding-y
-   --adv-table-condensed-cell-padding
-   --adv-table-condensed-font-size
-   ```
+/* Accordion */
+--adv-accordion-border-radius: var(--adv-border-radius);
+--adv-accordion-item-border-color: var(--adv-border-color);
+--adv-accordion-item-border-width: var(--adv-border-width);
+--adv-accordion-between-items-border-color: transparent;
+--adv-accordion-header-color: var(--adv-color-black);
+--adv-accordion-header-padding: var(--adv-spacing-16);
+--adv-accordion-header-font-weight: var(--adv-text-font-weight-semi-bold);
+--adv-accordion-header-hover-background-color: var(--adv-color-grey-10);
+--adv-accordion-header-active-background-color: var(--adv-color-grey-20);
+--adv-accordion-header-border-radius: var(--adv-spacing-4);
+--adv-accordion-title-color: inherit;
+--adv-accordion-toggle-margin: var(--adv-spacing-2) var(--adv-spacing-16) 0 0;
+--adv-accordion-toggle-padding: 0;
+--adv-accordion-toggle-width: var(--adv-spacing-12);
+--adv-accordion-content-margin: 0 0 var(--adv-spacing-24);
+--adv-accordion-content-padding: 0 var(--adv-spacing-16) 0 calc(var(--adv-spacing-32) + var(--adv-spacing-12));
+--adv-accordion-content-closed-margin: 0;
+--adv-accordion-transition-duration: var(--adv-transition-duration);
+--adv-accordion-transition-function: var(--adv-transition-function);
+--adv-accordion-transition-property: margin, height, padding;
+--adv-accordion-css-animated-max-height: 500px;
+--adv-accordion-css-animated-transition-duration: var(--adv-accordion-transition-duration);
+--adv-accordion-css-animated-transition-property: margin, max-height;
+
+/* Heading */
+--adv-heading-font-size: 32px;
+--adv-heading-font-weight: var(--adv-text-font-weight-semi-bold);
+--adv-heading-line-height: 40px;
+--adv-heading-2-font-size: 24px;
+--adv-heading-2-font-weight: var(--adv-text-font-weight-semi-bold);
+--adv-heading-2-line-height: 32px;
+
+/* Icon */
+--adv-icon-color: var(--adv-color-black);
+
+/* Link */
+--adv-link-color: var(--adv-color-blue);
+--adv-link-background-color: transparent;
+--adv-link-text-decoration: none;
+--adv-link-hover-text-decoration: underline;
+--adv-link-active-color: var(--adv-link-color);
+--adv-link-focus-outline: none;
+--adv-link-visited-color: var(--adv-link-color);
+--adv-link-inherit-font-size: inherit;
+--adv-link-inherit-color: inherit;
+--adv-link-underline-color: inherit;
+
+/* List */
+--adv-list-margin: 0;
+--adv-list-padding: 0 0 0 18px;
+--adv-list-nested-padding: var(--adv-list-padding);
+--adv-list-item-padding: 0 0 0 var(--adv-spacing-4);
+--adv-list-no-markers-padding: 0;
+--adv-list-no-markers-list-style: none;
+
+/* Section */
+--adv-section-background-color: var(--adv-color-grey-10);
+--adv-section-border-radius: var(--adv-border-radius);
+--adv-section-margin: var(--adv-spacing-24) 0 0 0;
+--adv-section-padding: var(--adv-spacing-16);
+
+/* Table */
+--adv-table-width: 100%;
+--adv-table-margin: 0;
+--adv-table-padding: 0;
+--adv-table-border: none;
+--adv-table-vertical-align: top;
+--adv-table-line-height: 16px;
+--adv-table-row-border-width: var(--adv-border-width);
+--adv-table-row-border-style: var(--adv-border-style);
+--adv-table-row-border-color: var(--adv-border-color);
+--adv-table-row-border: var(--adv-table-row-border-width) var(--adv-table-row-border-style) var(--adv-table-row-border-color);
+--adv-table-row-changed-background-color: var(--adv-color-grey-10);
+--adv-table-cell-padding-top: var(--adv-spacing-12);
+--adv-table-cell-padding-right: calc(var(--adv-spacing-16) + var(--adv-spacing-24));
+--adv-table-cell-padding-bottom: var(--adv-spacing-12);
+--adv-table-cell-padding-left: var(--adv-spacing-16);
+--adv-table-cell-padding: var(--adv-table-cell-padding-top) var(--adv-table-cell-padding-right) var(--adv-table-cell-padding-bottom) var(--adv-table-cell-padding-left);
+--adv-table-cell-text-align: left;
+--adv-table-first-column-padding-left: var(--adv-spacing-24);
+--adv-table-condensed-cell-padding-y: var(--adv-spacing-8);
+--adv-table-condensed-cell-padding: var(--adv-table-condensed-cell-padding-y) var(--adv-table-cell-padding-right) var(--adv-table-condensed-cell-padding-y) var(--adv-table-cell-padding-left);
+--adv-table-condensed-font-size: var(--adv-text-font-size-small);
+```
 
 ## Development
 
