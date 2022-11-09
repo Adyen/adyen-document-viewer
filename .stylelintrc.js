@@ -23,8 +23,6 @@ module.exports = {
         'scss/at-mixin-pattern': bemPattern,
         'scss/dollar-variable-pattern': bemPattern,
 
-        // Require !default next to each variable to allow for theming
-        'scss/dollar-variable-default': [true, { ignore: 'local' }],
         'scss/at-import-partial-extension-blacklist': null
     }
 };
