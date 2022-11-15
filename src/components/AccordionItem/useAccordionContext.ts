@@ -1,9 +1,8 @@
 import { useContext } from 'preact/hooks';
 import { AccordionContext } from '../Accordion/AccordionContext';
-import { AccordionContextType } from '../Accordion/types';
 
 function useAccordionContext() {
-    return useContext(AccordionContext) as AccordionContextType;
+    return useContext(AccordionContext);
 }
 
 export default useAccordionContext;
