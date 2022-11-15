@@ -5,18 +5,18 @@ import CollapsibleContainer from '../CollapsibleContainer/CollapsibleContainer';
 import Icon from '../Icon/Icon';
 import { getUniqueId } from '../../utils/id-generator';
 import { useState, useEffect } from 'preact/hooks';
-import { AccordionContextType, AccordionItem } from '../Accordion/types';
+import { AccordionItemState } from '../Accordion/types';
 import './AccordionItem.scss';
 
 export default function AccordionItem({ children, open = false, title = '' }: AccordionItemProps) {
-    const { expand, items, setItems, onExpandSection } = useAccordionContext() as AccordionContextType;
+    const { expand, items, setItems, onExpandSection } = useAccordionContext();
 
     const [isOpen, setIsOpen] = useState<boolean>(open);
     const [id] = useState<string>(getUniqueId);
 
     const toggle = () => {
         const newValue = !isOpen;
-        const newItems: AccordionItem[] = [...items];
+        const newItems: AccordionItemState[] = [...items];
         if (!expand) {
             setItems(newItems.map((item) => ({ ...item, isOpen: item.id === id ? newValue : false })));
         } else {
