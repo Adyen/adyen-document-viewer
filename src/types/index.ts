@@ -1,31 +1,31 @@
 // Enums
 export enum ElementTypes {
-    Chapter = 'chapter',
-    Section = 'section',
-    Paragraph = 'paragraph',
-    Text = 'text',
-    Weblink = 'weblink',
-    List = 'list',
-    Table = 'table',
-    InternalReference = 'internalReference'
+  Chapter = 'chapter',
+  Section = 'section',
+  Paragraph = 'paragraph',
+  Text = 'text',
+  Weblink = 'weblink',
+  List = 'list',
+  Table = 'table',
+  InternalReference = 'internalReference',
 }
 
 export enum TextStyle {
-    Bold = 'BOLD',
-    Italic = 'ITALIC'
+  Bold = 'BOLD',
+  Italic = 'ITALIC',
 }
 
 // Interfaces
 export interface ContentElements {
-    contentElements: Element[];
+  contentElements: Element[];
 }
 
 export interface Element extends ContentElements {
-    type: ElementTypes;
+  type: ElementTypes;
 }
 
 export interface TopLevelElement {
-    isTopLevel?: boolean;
+  isTopLevel?: boolean;
 }
 
 // Elements
@@ -39,7 +39,13 @@ type ListStyle = { ordered: boolean };
 type ListItem = { content: Element[]; subList: List };
 type TableCell = { elements: Element[] };
 type TableRow = TableCell[];
-type Table = { rows: TableRow[]; label: string; captions: Element[]; titlePrefix: Text; title: Text };
+type Table = {
+  rows: TableRow[];
+  label: string;
+  captions: Element[];
+  titlePrefix: Text;
+  title: Text;
+};
 type InternalReference = { referencedLabel: string; displayText: Text };
 type DocumentViewerAnalytics = { onExpandSection?: (title: string) => void };
 

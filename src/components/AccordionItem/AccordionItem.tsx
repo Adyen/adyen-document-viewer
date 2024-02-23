@@ -9,49 +9,49 @@ import { AccordionItemState } from '../Accordion/types';
 import './AccordionItem.scss';
 
 export default function AccordionItem({ children, open = false, title = '' }: AccordionItemProps) {
-    const { expand, items, setItems, onExpandSection } = useAccordionContext();
+  const { expand, items, setItems, onExpandSection } = useAccordionContext();
 
-    const [isOpen, setIsOpen] = useState<boolean>(open);
-    const [id] = useState<string>(getUniqueId);
+  const [isOpen, setIsOpen] = useState<boolean>(open);
+  const [id] = useState<string>(getUniqueId);
 
-    const toggle = () => {
-        const newValue = !isOpen;
-        const newItems: AccordionItemState[] = [...items];
-        if (!expand) {
-            setItems(newItems.map((item) => ({ ...item, isOpen: item.id === id ? newValue : false })));
-        } else {
-            newItems.find((item) => item.id === id).isOpen = newValue;
-            setItems(newItems);
-        }
-    };
+  const toggle = () => {
+    const newValue = !isOpen;
+    const newItems: AccordionItemState[] = [...items];
+    if (!expand) {
+      setItems(newItems.map((item) => ({ ...item, isOpen: item.id === id ? newValue : false })));
+    } else {
+      newItems.find((item) => item.id === id).isOpen = newValue;
+      setItems(newItems);
+    }
+  };
 
-    useEffect(() => {
-        setItems((items) => [...items, { id, isOpen }]);
-    }, []);
+  useEffect(() => {
+    setItems((items) => [...items, { id, isOpen }]);
+  }, []);
 
-    useEffect(() => {
-        setIsOpen(open);
-    }, [open]);
+  useEffect(() => {
+    setIsOpen(open);
+  }, [open]);
 
-    useEffect(() => {
-        setIsOpen(items.find((item) => item.id === id)?.isOpen);
-    }, [items]);
+  useEffect(() => {
+    setIsOpen(items.find((item) => item.id === id)?.isOpen);
+  }, [items]);
 
-    useEffect(() => {
-        isOpen && onExpandSection?.(title);
-    }, [isOpen]);
+  useEffect(() => {
+    isOpen && onExpandSection?.(title);
+  }, [isOpen]);
 
-    return (
-        <div className="adv-accordion__item">
-            <div role="button" className="adv-accordion__header" tabIndex={0} onClick={toggle}>
-                <Icon name={isOpen ? 'chevron-up' : 'chevron-down'} className="adv-accordion__toggle" />
-                <div className="adv-accordion__title-wrapper">
-                    <div className="adv-accordion__title">{title}</div>
-                </div>
-            </div>
-            <CollapsibleContainer collapsed={!isOpen}>
-                <div className="adv-accordion__content">{children}</div>
-            </CollapsibleContainer>
+  return (
+    <div className="adv-accordion__item">
+      <div role="button" className="adv-accordion__header" tabIndex={0} onClick={toggle}>
+        <Icon name={isOpen ? 'chevron-up' : 'chevron-down'} className="adv-accordion__toggle" />
+        <div className="adv-accordion__title-wrapper">
+          <div className="adv-accordion__title">{title}</div>
         </div>
-    );
+      </div>
+      <CollapsibleContainer collapsed={!isOpen}>
+        <div className="adv-accordion__content">{children}</div>
+      </CollapsibleContainer>
+    </div>
+  );
 }

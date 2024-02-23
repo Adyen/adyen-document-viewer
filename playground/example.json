@@ -47,10 +47,7 @@
                 {
                   "type": "text",
                   "content": " This is a bold and italic example.",
-                  "styles": [
-                    "BOLD",
-                    "ITALIC"
-                  ]
+                  "styles": ["BOLD", "ITALIC"]
                 },
                 {
                   "type": "paragraph",
@@ -73,10 +70,7 @@
                         {
                           "type": "text",
                           "content": "first item in BI.",
-                          "styles": [
-                            "BOLD",
-                            "ITALIC"
-                          ]
+                          "styles": ["BOLD", "ITALIC"]
                         }
                       ],
                       "subList": null
@@ -200,9 +194,7 @@
                           {
                             "type": "text",
                             "content": "Row 1",
-                            "styles": [
-                              "BOLD"
-                            ]
+                            "styles": ["BOLD"]
                           }
                         ]
                       },
@@ -230,9 +222,7 @@
                           {
                             "type": "text",
                             "content": "Row 2",
-                            "styles": [
-                              "BOLD"
-                            ]
+                            "styles": ["BOLD"]
                           }
                         ]
                       },
@@ -266,10 +256,7 @@
                     "styles": []
                   },
                   "style": {
-                    "columnSizes": [
-                      "SMALL",
-                      "LARGE"
-                    ],
+                    "columnSizes": ["SMALL", "LARGE"],
                     "alignment": "LEFT"
                   },
                   "label": "tableReference"

@@ -1,18 +1,18 @@
 @import 'src/style/mixins';
 
 @mixin adv-heading {
-    @include adv-component-base;
+  @include adv-component-base;
 
-    display: block;
-    font-size: var(--adv-heading-font-size);
-    font-weight: var(--adv-heading-font-weight);
-    line-height: var(--adv-heading-line-height);
-    margin: 0;
-    padding: 0;
+  display: block;
+  font-size: var(--adv-heading-font-size);
+  font-weight: var(--adv-heading-font-weight);
+  line-height: var(--adv-heading-line-height);
+  margin: 0;
+  padding: 0;
 }
 
 @mixin adv-heading--2 {
-    font-size: var(--adv-heading-2-font-size);
-    font-weight: var(--adv-heading-2-font-weight);
-    line-height: var(--adv-heading-2-line-height);
+  font-size: var(--adv-heading-2-font-size);
+  font-weight: var(--adv-heading-2-font-weight);
+  line-height: var(--adv-heading-2-line-height);
 }

@@ -1,9 +1,9 @@
 @import 'Accordion.mixins';
 
 .adv-accordion {
-    @include adv-accordion;
+  @include adv-accordion;
 }
 
 .adv-accordion--container {
-    @include adv-accordion--container;
+  @include adv-accordion--container;
 }

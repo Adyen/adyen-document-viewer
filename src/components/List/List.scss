@@ -1,25 +1,25 @@
 @import 'List.mixins';
 
 .adv-list {
-    @include adv-list;
+  @include adv-list;
 }
 
 .adv-list--no-markers {
-    @include adv-list--no-markers;
+  @include adv-list--no-markers;
 }
 
 .adv-list__item {
-    @include adv-list__item;
+  @include adv-list__item;
 }
 
 .adv-list__item--no-marker {
-    @include adv-list__item--no-marker;
+  @include adv-list__item--no-marker;
 }
 
 .adv-list--nested {
-    @include adv-list--nested;
+  @include adv-list--nested;
 }
 
 .adv-list--ordered {
-    @include adv-list--ordered;
+  @include adv-list--ordered;
 }

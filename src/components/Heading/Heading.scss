@@ -1,9 +1,9 @@
 @import 'Heading.mixins';
 
 .adv-heading {
-    @include adv-heading;
+  @include adv-heading;
 }
 
 .adv-heading--2 {
-    @include adv-heading--2;
+  @include adv-heading--2;
 }
