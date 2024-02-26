@@ -1,7 +1,7 @@
 import { ComponentChildren } from 'preact';
 
 export interface AccordionItemProps {
-    children: ComponentChildren;
-    open?: boolean;
-    title?: string;
+  children: ComponentChildren;
+  open?: boolean;
+  title?: string;
 }

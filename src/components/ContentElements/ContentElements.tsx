@@ -11,83 +11,87 @@ import List from '../ListElemennt/List';
 import Table from '../Table/Table';
 import InternalReference from '../InternalReference/InternalReference';
 
-export default function ContentElements({ contentElements, isTopLevel = false, onExpandSection }: ContentElementsProps) {
-    const components = {
-        chapter: Chapter,
-        section: Section,
-        paragraph: Paragraph,
-        text: Text,
-        weblink: Weblink,
-        list: List,
-        table: Table,
-        internalReference: InternalReference,
-        breakline: 'br'
-    };
+export default function ContentElements({
+  contentElements,
+  isTopLevel = false,
+  onExpandSection,
+}: ContentElementsProps) {
+  const components = {
+    chapter: Chapter,
+    section: Section,
+    paragraph: Paragraph,
+    text: Text,
+    weblink: Weblink,
+    list: List,
+    table: Table,
+    internalReference: InternalReference,
+    breakline: 'br',
+  };
 
-    const getKey = (type: string) => `key-${type}-${getUniqueId()}`;
+  const getKey = (type: string) => `key-${type}-${getUniqueId()}`;
 
-    const getProps = (element): any => {
-        switch (element.type) {
-            case ElementTypes.Chapter:
-                return {
-                    title: element.title,
-                    contentElements: element.contentElements
-                };
-            case ElementTypes.Section:
-                return {
-                    isTopLevel,
-                    title: element.title,
-                    label: element.label,
-                    contentElements: element.contentElements
-                };
-            case ElementTypes.Paragraph:
-                return {
-                    isTopLevel,
-                    contentElements: element.contentElements
-                };
-            case ElementTypes.Text:
-                return {
-                    content: element.content,
-                    styles: element.styles
-                };
-            case ElementTypes.Weblink:
-                return {
-                    url: element.url,
-                    displayText: element.displayText
-                };
-            case ElementTypes.List:
-                return {
-                    items: element.items,
-                    style: element.style
-                };
-            case ElementTypes.Table:
-                return {
-                    rows: element.rows,
-                    label: element.label,
-                    captions: element.captions,
-                    titlePrefix: element.titlePrefix,
-                    title: element.title
-                };
-            case ElementTypes.InternalReference:
-                return {
-                    referencedLabel: element.referencedLabel,
-                    displayText: element.displayText
-                };
-            default:
-                return null;
-        }
-    };
+  const getProps = (element): any => {
+    switch (element.type) {
+      case ElementTypes.Chapter:
+        return {
+          title: element.title,
+          contentElements: element.contentElements,
+        };
+      case ElementTypes.Section:
+        return {
+          isTopLevel,
+          title: element.title,
+          label: element.label,
+          contentElements: element.contentElements,
+        };
+      case ElementTypes.Paragraph:
+        return {
+          isTopLevel,
+          contentElements: element.contentElements,
+        };
+      case ElementTypes.Text:
+        return {
+          content: element.content,
+          styles: element.styles,
+        };
+      case ElementTypes.Weblink:
+        return {
+          url: element.url,
+          displayText: element.displayText,
+        };
+      case ElementTypes.List:
+        return {
+          items: element.items,
+          style: element.style,
+        };
+      case ElementTypes.Table:
+        return {
+          rows: element.rows,
+          label: element.label,
+          captions: element.captions,
+          titlePrefix: element.titlePrefix,
+          title: element.title,
+        };
+      case ElementTypes.InternalReference:
+        return {
+          referencedLabel: element.referencedLabel,
+          displayText: element.displayText,
+        };
+      default:
+        return null;
+    }
+  };
 
-    const elements = contentElements.map((contentElement): VNode => {
-        const Component = components[contentElement.type];
-        return <Component key={getKey(contentElement.type)} {...getProps(contentElement)} />;
-    });
+  const elements = contentElements.map((contentElement): VNode => {
+    const Component = components[contentElement.type];
+    return <Component key={getKey(contentElement.type)} {...getProps(contentElement)} />;
+  });
 
-    return isTopLevel ? (
-        <Accordion onExpandSection={onExpandSection} expand>
-            {elements}
-        </Accordion>
-    ) : (
-        <span>{elements}</span>
-    );
+  return isTopLevel ? (
+    <Accordion onExpandSection={onExpandSection} expand>
+      {elements}
+    </Accordion>
+  ) : (
+    <span>{elements}</span>
+  );
 }

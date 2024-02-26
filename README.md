@@ -8,16 +8,16 @@ Adyen Document Viewer provides you with a flexible way of rendering Adyen-genera
 
 1. Install the package using [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-    ```sh
-    npm install @adyen/adyen-document-viewer --save
-    ```
+   ```sh
+   npm install @adyen/adyen-document-viewer --save
+   ```
 
 2. Import [Adyen Document Viewer Node package](https://www.npmjs.com/package/@adyen/adyen-document-viewer) into your application
 
-    ```js
-    import AdyenDocumentViewer from '@adyen/adyen-document-viewer';
-    import '@adyen/adyen-document-viewer/dist/adyen-document-viewer.min.css'; 
-    ```
+   ```js
+   import AdyenDocumentViewer from '@adyen/adyen-document-viewer';
+   import '@adyen/adyen-document-viewer/dist/adyen-document-viewer.min.css';
+   ```
 
 ### CDN
 
@@ -25,7 +25,10 @@ Include the script and stylesheet to a `.html` file
 
 ```html
 <script src="https://unpkg.com/@adyen/adyen-document-viewer@^1.0.0"></script>
-<link rel="stylesheet" href="https://unpkg.com/@adyen/adyen-document-viewer@^1.0.0/dist/adyen-document-viewer.min.css">
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@adyen/adyen-document-viewer@^1.0.0/dist/adyen-document-viewer.min.css"
+/>
 ```
 
 **NOTE:** By choosing this method, `AdyenDocumentViewer` class will become available globally in your application.
@@ -34,31 +37,31 @@ Include the script and stylesheet to a `.html` file
 
 1. The component requires an HTML element to render its contents. Create an instance of `AdyenDocumentViewer` and pass the HTML element itself or a `querySelector` string value which targets it
 
-    ```js
-    const documentViewer = new AdyenDocumentViewer('#test');
-    ```
+   ```js
+   const documentViewer = new AdyenDocumentViewer('#test');
+   ```
 
 2. Call the `render` method, and pass the document as parameter
 
-    ```js
-    documentViewer.render(document);
-    ```
+   ```js
+   documentViewer.render(document);
+   ```
 
-## Styling 
+## Styling
 
 Adyen Document Viewer is themeable and uses CSS variables that can be overridden in order to achieve the desired style. Overrides should be added for `.adyen-document-viewer` class.
 
 ### Overriding styles example
 
-1. Create `override.css` with the variables that you would like to style 
+1. Create `override.css` with the variables that you would like to style
 
    ```css
    .adyen-document-viewer {
-       --adv-background-color: #ff8888;
-       --adv-heading-font-size: 48px;
+     --adv-background-color: #ff8888;
+     --adv-heading-font-size: 48px;
    }
    ```
-   
+
 2. Make sure to import the `override.css` after importing library's main CSS
 
    ```js
@@ -67,6 +70,7 @@ Adyen Document Viewer is themeable and uses CSS variables that can be overridden
    ```
 
 ### Available CSS variables
+
 ```css
 /* Colors */
 --adv-color-white: #fff; /* backgrounds  */
@@ -79,7 +83,8 @@ Adyen Document Viewer is themeable and uses CSS variables that can be overridden
 --adv-background-color: var(--adv-color-white);
 
 /* Fonts */
---adv-text-font-family: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen, ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+--adv-text-font-family: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen, ubuntu,
+  cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 --adv-text-color: var(--adv-color-black);
 --adv-text-font-weight-regular: 400;
 --adv-text-font-weight-semi-bold: 600;
@@ -134,7 +139,9 @@ Adyen Document Viewer is themeable and uses CSS variables that can be overridden
 --adv-accordion-toggle-padding: 0;
 --adv-accordion-toggle-width: var(--adv-spacing-12);
 --adv-accordion-content-margin: 0 0 var(--adv-spacing-24);
---adv-accordion-content-padding: 0 var(--adv-spacing-16) 0 calc(var(--adv-spacing-32) + var(--adv-spacing-12));
+--adv-accordion-content-padding: 0 var(--adv-spacing-16) 0 calc(
+    var(--adv-spacing-32) + var(--adv-spacing-12)
+  );
 --adv-accordion-content-closed-margin: 0;
 --adv-accordion-transition-duration: var(--adv-transition-duration);
 --adv-accordion-transition-function: var(--adv-transition-function);
@@ -196,11 +203,16 @@ Adyen Document Viewer is themeable and uses CSS variables that can be overridden
 --adv-table-cell-padding-right: calc(var(--adv-spacing-16) + var(--adv-spacing-24));
 --adv-table-cell-padding-bottom: var(--adv-spacing-12);
 --adv-table-cell-padding-left: var(--adv-spacing-16);
---adv-table-cell-padding: var(--adv-table-cell-padding-top) var(--adv-table-cell-padding-right) var(--adv-table-cell-padding-bottom) var(--adv-table-cell-padding-left);
+--adv-table-cell-padding: var(--adv-table-cell-padding-top) var(--adv-table-cell-padding-right) var(
+    --adv-table-cell-padding-bottom
+  ) var(--adv-table-cell-padding-left);
 --adv-table-cell-text-align: left;
 --adv-table-first-column-padding-left: var(--adv-spacing-24);
 --adv-table-condensed-cell-padding-y: var(--adv-spacing-8);
---adv-table-condensed-cell-padding: var(--adv-table-condensed-cell-padding-y) var(--adv-table-cell-padding-right) var(--adv-table-condensed-cell-padding-y) var(--adv-table-cell-padding-left);
+--adv-table-condensed-cell-padding: var(--adv-table-condensed-cell-padding-y) var(
+    --adv-table-cell-padding-right
+  )
+  var(--adv-table-condensed-cell-padding-y) var(--adv-table-cell-padding-left);
 --adv-table-condensed-font-size: var(--adv-text-font-size-small);
 ```
 
@@ -210,12 +222,13 @@ To run the development environment:
 
 1. Clone [this repository](https://github.com/Adyen/adyen-document-viewer).
 2. Install the dependencies by running:
- 
+
    ```sh
    npm install
    ```
+
 3. Run the development environment, which starts a server listening on [http://localhost:8080](http://localhost:8080):
- 
+
    ```sh
    npm start
    ```
@@ -225,6 +238,7 @@ To run the development environment:
 If you have a feature request, or spotted a bug or a technical problem, [contact our support team](https://www.adyen.help/hc/en-us/requests/new).
 
 ## Contributing
+
 We strongly encourage you to contribute to our repository. Find out more in our [contribution guidelines](https://github.com/Adyen/.github/blob/master/CONTRIBUTING.md).
 
 ## License
