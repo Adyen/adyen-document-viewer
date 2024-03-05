@@ -1,9 +1,5 @@
-import { Document } from './types';
-
-if (process.env.NODE_ENV === 'development') {
-  require('preact/debug');
-}
 import { h, render } from 'preact';
+import { Document } from './types';
 import DocumentViewer from './DocumentViewer';
 
 export default class AdyenDocumentViewer {
