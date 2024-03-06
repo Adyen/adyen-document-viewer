@@ -1,3 +1,5 @@
+import { Document } from './types';
+
 if (process.env.NODE_ENV === 'development') {
   require('preact/debug');
 }
@@ -28,7 +30,7 @@ export default class AdyenDocumentViewer {
    * Renders the document
    * @param document - The JSON document
    */
-  render(document: JSON): void {
+  render(document: Document): void {
     render(<DocumentViewer document={document} />, this.target);
   }
 }
