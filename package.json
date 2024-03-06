@@ -15,10 +15,13 @@
   "scripts": {
     "clean": "rm -rf dist",
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npm run types:build",
     "preview": "vite preview",
     "lint": "eslint 'src/**/*.{js,ts,tsx}'",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "types:build": "tsc --project tsconfig-build.json",
+    "types:check": "tsc && tsc-strict",
+    "types:watch": "tsc --watch --preserveWatchOutput"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.8.1",
@@ -54,6 +57,14 @@
     "LICENSE",
     "README"
   ],
+  "exports": {
+    "./adyen-document-viewer.min.js": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/adyen-document-viewer.min.js",
+      "require": "./dist/adyen-document-viewer.min.umd.cjs"
+    },
+    "./adyen-document-viewer.min.css": "./dist/adyen-document-viewer.min.css"
+  },
   "optionalDependencies": {
     "@rollup/rollup-darwin-x64": "^4.9.1"
   }
