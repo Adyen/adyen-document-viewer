@@ -46,8 +46,17 @@
                 },
                 {
                   "type": "text",
-                  "content": " This is a bold and italic example.",
+                  "content": " This is a bold and italic example. ",
                   "styles": ["BOLD", "ITALIC"]
+                },
+                {
+                  "type": "internalReference",
+                  "referencedLabel": "tableReference",
+                  "displayText": {
+                    "type": "text",
+                    "content": "This should take you to the table in the section below.",
+                    "styles": []
+                  }
                 },
                 {
                   "type": "paragraph",
@@ -102,9 +111,13 @@
                           {
                             "content": [
                               {
-                                "type": "text",
-                                "content": "Second Sub item:",
-                                "styles": []
+                                "type": "internalReference",
+                                "referencedLabel": "2",
+                                "displayText": {
+                                  "type": "text",
+                                  "content": "Second section",
+                                  "styles": []
+                                }
                               }
                             ],
                             "subList": null

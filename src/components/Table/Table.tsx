@@ -3,8 +3,17 @@ import { TableProps } from '../../types';
 import Text from '../Text/Text';
 import ContentElements from '../ContentElements/ContentElements';
 import './Table.scss';
+import { formatId } from '../../utils/format-id';
 
-export default function Table({ rows, label, captions, titlePrefix, title }: TableProps) {
+export default function Table({
+  rows,
+  label: originalLabel,
+  captions,
+  titlePrefix,
+  title,
+}: TableProps) {
+  const label = formatId(originalLabel);
+
   return (
     <div id={label}>
       <div className="adv-u-margin-y-8 adv-u-text-align-center">

@@ -8,7 +8,13 @@ import { useState, useEffect } from 'preact/hooks';
 import { AccordionItemState } from '../Accordion/types';
 import './AccordionItem.scss';
 
-export default function AccordionItem({ children, open = false, title = '' }: AccordionItemProps) {
+export default function AccordionItem({
+  children,
+  open = false,
+  title = '',
+  onOpen = () => {},
+  onClose = () => {},
+}: AccordionItemProps) {
   const { expand, items, setItems, onExpandSection } = useAccordionContext();
 
   const [isOpen, setIsOpen] = useState<boolean>(open);
@@ -38,7 +44,12 @@ export default function AccordionItem({ children, open = false, title = '' }: Ac
   }, [items]);
 
   useEffect(() => {
-    isOpen && onExpandSection?.(title);
+    if (isOpen) {
+      onExpandSection?.(title);
+      onOpen();
+    } else {
+      onClose();
+    }
   }, [isOpen]);
 
   return (
