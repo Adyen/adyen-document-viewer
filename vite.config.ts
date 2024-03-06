@@ -11,6 +11,7 @@ dns.setDefaultResultOrder('verbatim');
 export default defineConfig(() => {
   return {
     css: {
+      
       modules: {
         // Remove this after changing all of our SCSS @import to @use
         scopeBehaviour: 'local',
@@ -21,8 +22,13 @@ export default defineConfig(() => {
       lib: {
         name: 'AdyenDocumentViewer',
         entry: resolve(__dirname, 'src/index.tsx'),
-        formats: ['es'],
-        fileName: 'adyen-document-viewer.min.js',
+        formats: ['es', 'umd'],
+        fileName: 'adyen-document-viewer.min',
+      },
+      rollupOptions: {
+        output: {
+          assetFileNames: "adyen-document-viewer.[ext]",
+        },
       },
       minify: true,
       outDir: resolve(__dirname, 'dist'),
