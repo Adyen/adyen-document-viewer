@@ -9,14 +9,13 @@
   ],
   "version": "1.0.0",
   "description": "Adyen Document Viewer",
-  "main": "./dist/adyen-document-viewer.min.js",
+  "main": "./dist/adyen-document-viewer.min.umd.cjs",
+  "module": "./dist/adyen-document-viewer.min.js",
   "type": "module",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "clean": "rm -rf dist",
-    "dev": "vite",
+    "start": "vite",
     "build": "vite build && npm run types:build",
-    "preview": "vite preview",
     "lint": "eslint 'src/**/*.{js,ts,tsx}'",
     "lint:fix": "npm run lint -- --fix",
     "types:build": "tsc --project tsconfig-build.json",
@@ -42,6 +41,7 @@
     "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-scss": "^4.2.0",
     "typescript": "^5.3.3",
+    "typescript-strict-plugin": "^2.2.0",
     "vite": "^4.5.1"
   },
   "license": "SEE LICENSE IN LICENSE",
@@ -54,16 +54,17 @@
     "dist/adyen-document-viewer.min.umd.cjs",
     "dist/adyen-document-viewer.min.css",
     "dist/index.d.ts",
+    "dist/types/index.d.ts",
     "LICENSE",
     "README"
   ],
   "exports": {
-    "./adyen-document-viewer.min.js": {
+    ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/adyen-document-viewer.min.js",
       "require": "./dist/adyen-document-viewer.min.umd.cjs"
     },
-    "./adyen-document-viewer.min.css": "./dist/adyen-document-viewer.min.css"
+    "./dist/adyen-document-viewer.min.css": "./dist/adyen-document-viewer.min.css"
   },
   "optionalDependencies": {
     "@rollup/rollup-darwin-x64": "^4.9.1"

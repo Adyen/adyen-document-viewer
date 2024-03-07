@@ -1,19 +1,18 @@
-import dns from 'node:dns';
+import { setDefaultResultOrder } from 'node:dns';
 import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 import preact from '@preact/preset-vite';
 
 // This forces Vite to use `localhost` instead of `127.0.0.1`. Otherwise, we run into CORS issues
 // since `localhost:8080` and `localhost:8082` are same-origin, but `127.0.0.1:8082` isn't.
-dns.setDefaultResultOrder('verbatim');
+setDefaultResultOrder('verbatim');
 
 // https://vitejs.dev/config/
 export default defineConfig(() => {
   return {
     css: {
-      
       modules: {
-        // Remove this after changing all of our SCSS @import to @use
+        // TODO: Remove this after changing all of our SCSS @import to @use
         scopeBehaviour: 'local',
         generateScopedName: (name) => name,
       },
@@ -27,7 +26,7 @@ export default defineConfig(() => {
       },
       rollupOptions: {
         output: {
-          assetFileNames: "adyen-document-viewer.[ext]",
+          assetFileNames: 'adyen-document-viewer.min.[ext]',
         },
       },
       minify: true,

@@ -4,7 +4,9 @@
   "files": ["src/index.tsx", "node_modules/vite/client.d.ts", "src/scss.d.ts"],
   "compilerOptions": {
     "rootDir": "src",
+    "outDir": "dist",
     "noEmit": false,
-    "emitDeclarationOnly": true
+    "emitDeclarationOnly": true,
+    "declaration": true
   }
 }
