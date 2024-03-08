@@ -7,10 +7,10 @@
     "viewer",
     "adyen-document-viewer"
   ],
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Adyen Document Viewer",
-  "main": "./dist/adyen-document-viewer.min.umd.cjs",
-  "module": "./dist/adyen-document-viewer.min.js",
+  "main": "./dist/adyen-document-viewer.min.js",
+  "module": "./dist/adyen-document-viewer.min.mjs",
   "type": "module",
   "types": "./dist/index.d.ts",
   "scripts": {
