@@ -22,17 +22,19 @@
     "types:check": "tsc && tsc-strict",
     "types:watch": "tsc --watch --preserveWatchOutput"
   },
+  "dependencies": {
+    "classnames": "2.5.1",
+    "preact": "10.19.3"
+  },
   "devDependencies": {
     "@preact/preset-vite": "^2.8.1",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
-    "classnames": "^2.5.1",
     "eslint": "^8.12.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-jsx-a11y": "^6.8.0",
     "eslint-plugin-react": "^7.33.2",
-    "preact": "^10.19.3",
     "prettier": "3.2.4",
     "sass": "^1.70.0",
     "stylelint": "^14.1.0",
