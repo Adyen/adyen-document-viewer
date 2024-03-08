@@ -1,56 +1,85 @@
 // Enums
 export enum ElementTypes {
-    Chapter = 'chapter',
-    Section = 'section',
-    Paragraph = 'paragraph',
-    Text = 'text',
-    Weblink = 'weblink',
-    List = 'list',
-    Table = 'table',
-    InternalReference = 'internalReference'
+  Chapter = 'chapter',
+  Section = 'section',
+  Paragraph = 'paragraph',
+  Text = 'text',
+  Weblink = 'weblink',
+  List = 'list',
+  Table = 'table',
+  InternalReference = 'internalReference',
 }
 
 export enum TextStyle {
-    Bold = 'BOLD',
-    Italic = 'ITALIC'
+  Bold = 'BOLD',
+  Italic = 'ITALIC',
 }
 
 // Interfaces
-export interface ContentElements {
-    contentElements: Element[];
-}
-
-export interface Element extends ContentElements {
-    type: ElementTypes;
+export interface ElementWithInnerContent {
+  contentElements: Element[];
 }
 
 export interface TopLevelElement {
-    isTopLevel?: boolean;
+  isTopLevel?: boolean;
 }
 
 // Elements
-type Chapter = ContentElements & { title: Text };
-type Section = ContentElements & { title: Text; label: string };
-type Paragraph = ContentElements;
-type Text = { content: string; styles?: TextStyle[] };
-type Weblink = { url: string; displayText: Text };
-type List = { style: ListStyle; items: ListItem[] };
+export type Document = ElementWithInnerContent & { title: Text };
+type Chapter = ElementWithInnerContent & { type: ElementTypes.Chapter; title: Text };
+type Section = ElementWithInnerContent & { type: ElementTypes.Section; title: Text; label: string };
+type Paragraph = ElementWithInnerContent & { type: ElementTypes.Paragraph };
+type Text = { type: ElementTypes.Text; content: string; styles?: TextStyle[] };
+type Weblink = { type: ElementTypes.Weblink; url: string; displayText: Text };
+type List = { type: ElementTypes.List; style: ListStyle; items: ListItem[] };
 type ListStyle = { ordered: boolean };
 type ListItem = { content: Element[]; subList: List };
 type TableCell = { elements: Element[] };
 type TableRow = TableCell[];
-type Table = { rows: TableRow[]; label: string; captions: Element[]; titlePrefix: Text; title: Text };
-type InternalReference = { referencedLabel: string; displayText: Text };
+type Table = {
+  type: ElementTypes.Table;
+  rows: TableRow[];
+  label: string;
+  captions: Element[];
+  titlePrefix: Text;
+  title: Text;
+};
+type InternalReference = {
+  type: ElementTypes.InternalReference;
+  referencedLabel: string;
+  displayText: Text;
+};
 type DocumentViewerAnalytics = { onExpandSection?: (title: string) => void };
 
+export type Element =
+  | Document
+  | Chapter
+  | Section
+  | Paragraph
+  | Text
+  | Weblink
+  | List
+  | ListStyle
+  | ListItem
+  | TableCell
+  | TableRow
+  | Table
+  | InternalReference
+  | DocumentViewerAnalytics;
+
 // Props
-export type DocumentViewerProps = { document: any; className?: string } & DocumentViewerAnalytics;
-export type ContentElementsProps = ContentElements & TopLevelElement & DocumentViewerAnalytics;
-export type ChapterProps = Chapter;
-export type SectionProps = Section & TopLevelElement;
-export type ParagraphProps = Paragraph & TopLevelElement;
-export type TextProps = Text;
-export type WeblinkProps = Weblink;
-export type ListProps = List;
-export type TableProps = Table;
-export type InternalReferenceProps = InternalReference;
+export type DocumentViewerProps = {
+  document: Document;
+  className?: string;
+} & DocumentViewerAnalytics;
+export type ContentElementsProps = ElementWithInnerContent &
+  TopLevelElement &
+  DocumentViewerAnalytics;
+export type ChapterProps = Omit<Chapter, 'type'>;
+export type SectionProps = Omit<Section & TopLevelElement, 'type'>;
+export type ParagraphProps = Omit<Paragraph & TopLevelElement, 'type'>;
+export type TextProps = Omit<Text, 'type'>;
+export type WeblinkProps = Omit<Weblink, 'type'>;
+export type ListProps = Omit<List, 'type'>;
+export type TableProps = Omit<Table, 'type'>;
+export type InternalReferenceProps = Omit<InternalReference, 'type'>;

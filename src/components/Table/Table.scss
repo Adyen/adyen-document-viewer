@@ -1,29 +1,29 @@
 @import 'Table.mixins';
 
 .adv-table {
-    @include adv-table;
+  @include adv-table;
 }
 
 .adv-table--condensed {
-    @include adv-table--condensed;
+  @include adv-table--condensed;
 }
 
 .adv-table__row {
-    @include adv-table__row;
+  @include adv-table__row;
 }
 
 .adv-table__row--changed {
-    @include adv-table__row--changed;
+  @include adv-table__row--changed;
 }
 
 .adv-table__body {
-    @include adv-table__body;
+  @include adv-table__body;
 }
 
 .adv-table__cell {
-    @include adv-table__cell;
+  @include adv-table__cell;
 }
 
 .adv-table__cell--first-column {
-    @include adv-table__cell--first-column;
+  @include adv-table__cell--first-column;
 }

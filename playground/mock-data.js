@@ -1,4 +1,4 @@
-{
+export default {
   "title": {
     "type": "text",
     "content": "Example document",
@@ -46,11 +46,17 @@
                 },
                 {
                   "type": "text",
-                  "content": " This is a bold and italic example.",
-                  "styles": [
-                    "BOLD",
-                    "ITALIC"
-                  ]
+                  "content": " This is a bold and italic example. ",
+                  "styles": ["BOLD", "ITALIC"]
+                },
+                {
+                  "type": "internalReference",
+                  "referencedLabel": "tableReference",
+                  "displayText": {
+                    "type": "text",
+                    "content": "This should take you to the table in the section below.",
+                    "styles": []
+                  }
                 },
                 {
                   "type": "paragraph",
@@ -73,10 +79,7 @@
                         {
                           "type": "text",
                           "content": "first item in BI.",
-                          "styles": [
-                            "BOLD",
-                            "ITALIC"
-                          ]
+                          "styles": ["BOLD", "ITALIC"]
                         }
                       ],
                       "subList": null
@@ -108,9 +111,13 @@
                           {
                             "content": [
                               {
-                                "type": "text",
-                                "content": "Second Sub item:",
-                                "styles": []
+                                "type": "internalReference",
+                                "referencedLabel": "2",
+                                "displayText": {
+                                  "type": "text",
+                                  "content": "Second section",
+                                  "styles": []
+                                }
                               }
                             ],
                             "subList": null
@@ -200,9 +207,7 @@
                           {
                             "type": "text",
                             "content": "Row 1",
-                            "styles": [
-                              "BOLD"
-                            ]
+                            "styles": ["BOLD"]
                           }
                         ]
                       },
@@ -230,9 +235,7 @@
                           {
                             "type": "text",
                             "content": "Row 2",
-                            "styles": [
-                              "BOLD"
-                            ]
+                            "styles": ["BOLD"]
                           }
                         ]
                       },
@@ -266,10 +269,7 @@
                     "styles": []
                   },
                   "style": {
-                    "columnSizes": [
-                      "SMALL",
-                      "LARGE"
-                    ],
+                    "columnSizes": ["SMALL", "LARGE"],
                     "alignment": "LEFT"
                   },
                   "label": "tableReference"

@@ -1,37 +1,37 @@
 @import 'src/style/mixins';
 
 @mixin adv-list {
-    @include adv-component-base;
+  @include adv-component-base;
 
-    display: block;
-    list-style-position: outside;
-    list-style-type: disc;
-    margin: var(--adv-list-margin);
-    padding: var(--adv-list-padding);
+  display: block;
+  list-style-position: outside;
+  list-style-type: disc;
+  margin: var(--adv-list-margin);
+  padding: var(--adv-list-padding);
 }
 
 @mixin adv-list--ordered {
-    list-style-type: decimal;
+  list-style-type: decimal;
 }
 
 @mixin adv-list--nested {
-    list-style-type: circle;
-    padding: var(--adv-list-nested-padding);
+  list-style-type: circle;
+  padding: var(--adv-list-nested-padding);
 }
 
 @mixin adv-list__item {
-    padding: var(--adv-list-item-padding);
+  padding: var(--adv-list-item-padding);
 }
 
 @mixin adv-list__item--no-marker {
-    list-style: var(--adv-list-no-markers-list-style);
+  list-style: var(--adv-list-no-markers-list-style);
 }
 
 @mixin adv-list--no-markers {
-    list-style: var(--adv-list-no-markers-list-style);
-    padding: var(--adv-list-no-markers-padding);
+  list-style: var(--adv-list-no-markers-list-style);
+  padding: var(--adv-list-no-markers-padding);
 
-    .adv-list__item {
-        padding-left: 0;
-    }
+  .adv-list__item {
+    padding-left: 0;
+  }
 }
