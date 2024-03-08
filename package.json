@@ -7,7 +7,7 @@
     "viewer",
     "adyen-document-viewer"
   ],
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Adyen Document Viewer",
   "main": "./dist/adyen-document-viewer.min.umd.cjs",
   "module": "./dist/adyen-document-viewer.min.js",
@@ -51,8 +51,8 @@
     "url": "https://github.com/Adyen/adyen-document-viewer.git"
   },
   "files": [
+    "dist/adyen-document-viewer.min.mjs",
     "dist/adyen-document-viewer.min.js",
-    "dist/adyen-document-viewer.min.umd.cjs",
     "dist/adyen-document-viewer.min.css",
     "dist/index.d.ts",
     "dist/types/index.d.ts",
@@ -62,8 +62,8 @@
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/adyen-document-viewer.min.js",
-      "require": "./dist/adyen-document-viewer.min.umd.cjs"
+      "import": "./dist/adyen-document-viewer.min.mjs",
+      "require": "./dist/adyen-document-viewer.min.js"
     },
     "./dist/adyen-document-viewer.min.css": "./dist/adyen-document-viewer.min.css"
   },
