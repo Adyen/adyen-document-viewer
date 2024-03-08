@@ -40,7 +40,7 @@
     "stylelint": "^14.1.0",
     "stylelint-config-recommended": "^6.0.0",
     "stylelint-config-sass-guidelines": "^9.0.1",
-    "stylelint-scss": "^4.2.0",
+    "stylelint-scss": "^6.0.0",
     "typescript": "^5.3.3",
     "typescript-strict-plugin": "^2.2.0",
     "vite": "^4.5.1"
