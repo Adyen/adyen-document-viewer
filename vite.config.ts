@@ -22,7 +22,8 @@ export default defineConfig(() => {
         name: 'AdyenDocumentViewer',
         entry: resolve(__dirname, 'src/index.tsx'),
         formats: ['es', 'umd'],
-        fileName: 'adyen-document-viewer.min',
+        fileName: (format) =>
+          format === 'es' ? 'adyen-document-viewer.min.mjs' : 'adyen-document-viewer.min.js',
       },
       rollupOptions: {
         output: {
