@@ -1,12 +1,14 @@
+import './AccordionItem.scss';
+
 import { h } from 'preact';
-import useAccordionContext from './useAccordionContext';
-import { AccordionItemProps } from './types';
+import { useEffect, useState } from 'preact/hooks';
+
+import { getUniqueId } from '../../utils/id-generator';
+import { AccordionItemState } from '../Accordion/types';
 import CollapsibleContainer from '../CollapsibleContainer/CollapsibleContainer';
 import Icon from '../Icon/Icon';
-import { getUniqueId } from '../../utils/id-generator';
-import { useState, useEffect } from 'preact/hooks';
-import { AccordionItemState } from '../Accordion/types';
-import './AccordionItem.scss';
+import { AccordionItemProps } from './types';
+import useAccordionContext from './useAccordionContext';
 
 export default function AccordionItem({
   children,

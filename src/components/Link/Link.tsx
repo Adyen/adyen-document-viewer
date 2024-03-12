@@ -1,6 +1,8 @@
-import { FunctionalComponent, h } from 'preact';
-import cx from 'classnames';
 import './Link.scss';
+
+import cx from 'classnames';
+import { FunctionalComponent, h } from 'preact';
+
 import LinkProps from './types';
 
 const Link: FunctionalComponent<LinkProps> = ({

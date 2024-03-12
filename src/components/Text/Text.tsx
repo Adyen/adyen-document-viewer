@@ -1,6 +1,7 @@
-import { h } from 'preact';
-import { TextProps, TextStyle } from '../../types';
 import cx from 'classnames';
+import { h } from 'preact';
+
+import { TextProps, TextStyle } from '../../types';
 
 export default function Text({ content, styles }: TextProps) {
   const classNames = cx({

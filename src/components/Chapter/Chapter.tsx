@@ -1,8 +1,9 @@
 import { h } from 'preact';
+
 import { ChapterProps } from '../../types';
+import ContentElements from '../ContentElements/ContentElements';
 import Heading from '../Heading/Heading';
 import Text from '../Text/Text';
-import ContentElements from '../ContentElements/ContentElements';
 
 export default function Chapter({ title, contentElements }: ChapterProps) {
   return (

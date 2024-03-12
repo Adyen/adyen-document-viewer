@@ -1,6 +1,7 @@
 import { h, render } from 'preact';
-import { Document } from './types';
+
 import DocumentViewer from './DocumentViewer';
+import { Document } from './types';
 
 export default class AdyenDocumentViewer {
   private readonly target: HTMLElement;

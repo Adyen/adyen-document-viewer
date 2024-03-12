@@ -1,6 +1,8 @@
-import { h } from 'preact';
-import cx from 'classnames';
 import './List.scss';
+
+import cx from 'classnames';
+import { h } from 'preact';
+
 import { ListProps } from './types';
 
 function List({ className, nested, ordered, noMarkers, children }: ListProps) {

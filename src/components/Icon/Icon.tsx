@@ -1,6 +1,7 @@
-import { h } from 'preact';
-import cx from 'classnames';
 import './Icon.scss';
+
+import cx from 'classnames';
+import { h } from 'preact';
 
 interface IconProps {
   name: string;

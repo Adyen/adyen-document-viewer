@@ -1,8 +1,9 @@
 import { h } from 'preact';
+
 import { ListProps } from '../../types';
+import ContentElements from '../ContentElements/ContentElements';
 import List from '../List/List';
 import ListItem from '../List/ListItem';
-import ContentElements from '../ContentElements/ContentElements';
 
 export default function ListElement({ items, style }: ListProps) {
   return (

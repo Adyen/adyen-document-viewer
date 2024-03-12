@@ -1,9 +1,11 @@
+import './Accordion.scss';
+
+import cx from 'classnames';
 import { h } from 'preact';
 import { useState } from 'preact/hooks';
-import cx from 'classnames';
-import { AccordionProps, AccordionItemState } from './types';
+
 import { AccordionContext } from './AccordionContext';
-import './Accordion.scss';
+import { AccordionItemState, AccordionProps } from './types';
 
 export default function Accordion({
   children,
