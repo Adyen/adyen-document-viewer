@@ -8,14 +8,16 @@ export interface AccordionProps {
   onExpandSection?: (title: string) => void;
 }
 
-export type AccordionItemState = {
+export type AccordionSection = {
   id: string;
   isOpen: boolean;
 };
 
 export type AccordionContextType = {
   expand: boolean;
-  items: AccordionItemState[];
-  setItems: (items: AccordionItemState[] | ((items) => AccordionItemState[])) => void;
+  items: AccordionSection[];
+  setItems: (
+    items: AccordionSection[] | ((items: AccordionSection[]) => AccordionSection[]),
+  ) => void;
   onExpandSection?: (title: string) => void;
 };

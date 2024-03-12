@@ -11,7 +11,7 @@ import ContentElements from '../ContentElements/ContentElements';
 import Heading from '../Heading/Heading';
 import Text from '../Text/Text';
 
-const extractLabels = (obj) => {
+const extractLabels = (obj: any): string[] => {
   if (typeof obj !== 'object' || obj === null) {
     return [];
   }
@@ -20,7 +20,7 @@ const extractLabels = (obj) => {
     return [obj.label];
   }
 
-  return Object.values(obj).flatMap((value) => extractLabels(value));
+  return Object.values(obj).flatMap((value: any) => extractLabels(value));
 };
 
 export default function Section({

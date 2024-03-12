@@ -12,13 +12,13 @@ export default class AdyenDocumentViewer {
    */
   constructor(target: HTMLElement | string) {
     if (typeof target === 'object' && 'nodeType' in target) {
-      this.target = target;
+      this.target = target as HTMLElement;
     } else {
-      try {
-        this.target = window.document.querySelector(target);
-        if (!this.target) throw Error('Target element was not found');
-      } catch (e) {
-        throw Error(e);
+      const element = window.document.querySelector(target);
+      if (element instanceof HTMLElement) {
+        this.target = element;
+      } else {
+        throw new Error('Target element was not found');
       }
     }
   }
