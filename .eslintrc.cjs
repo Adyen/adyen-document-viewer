@@ -1,11 +1,12 @@
 module.exports = {
   parser: '@typescript-eslint/parser',
-  plugins: ['react', '@typescript-eslint', 'import', 'jsx-a11y'],
+  plugins: ['react', '@typescript-eslint', 'import', 'jsx-a11y', 'simple-import-sort', 'prettier'],
   extends: [
     'eslint:recommended',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended' /*'prettier/@typescript-eslint'*/,
+    'plugin:@typescript-eslint/recommended',
+    'prettier',
   ],
   parserOptions: {
     ecmaVersion: 2020,
@@ -85,6 +86,12 @@ module.exports = {
 
     // the base rule can report incorrect errors
     'no-useless-constructor': 'off',
+
+    // simple-import-sort
+    'import/order': 'off', // must be off for simple-import-sort to work
+    'simple-import-sort/exports': 'error',
+    'simple-import-sort/imports': 'error',
+    'sort-imports': 'off', // must be off for simple-import-sort to work
 
     // Typescript Rules
     '@typescript-eslint/no-unused-vars': ['error', { ignoreRestSiblings: true, vars: 'local' }],
