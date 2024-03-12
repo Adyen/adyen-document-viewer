@@ -83,6 +83,7 @@ export default function ContentElements({
   contentElements,
   isTopLevel = false,
   onExpandSection,
+  multiple,
 }: ContentElementsProps) {
   const elements = contentElements.map((contentElement): VNode | null => {
     if (!('type' in contentElement)) return null;
@@ -94,7 +95,7 @@ export default function ContentElements({
   });
 
   return isTopLevel ? (
-    <Accordion onExpandSection={onExpandSection} expand>
+    <Accordion onExpandSection={onExpandSection} expand={multiple}>
       {elements}
     </Accordion>
   ) : (

@@ -13,6 +13,7 @@ export default function DocumentViewer({
   document,
   className,
   onExpandSection,
+  multiple,
 }: DocumentViewerProps) {
   const classNames = cx('adyen-document-viewer', className);
 
@@ -25,6 +26,7 @@ export default function DocumentViewer({
         <ContentElements
           contentElements={document.contentElements}
           onExpandSection={onExpandSection}
+          multiple={multiple}
           isTopLevel
         />
       </div>

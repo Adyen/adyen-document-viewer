@@ -47,6 +47,26 @@ Include the script and stylesheet to a `.html` file
    documentViewer.render(document);
    ```
 
+## Configuration Options
+
+You can customize the behavior of `AdyenDocumentViewer` by passing options during initialization.
+
+| Option            | Description                                             | Default     |
+| ----------------- | ------------------------------------------------------- | ----------- |
+| `onExpandSection` | Callback function triggered when a section is expanded. | `undefined` |
+| `multiple`        | Allow multiple sections to be expanded simultaneously.  | `false`     |
+
+You can provide an object with the options as the second parameter when creating an instance of `AdyenDocumentViewer`:
+
+```js
+const options = {
+  onExpandSection: (sectionTitle) => console.log(`Section ${sectionTitle} expanded`),
+  multiple: true,
+};
+
+const documentViewer = new AdyenDocumentViewer('#test', options);
+```
+
 ## Styling
 
 Adyen Document Viewer is themeable and uses CSS variables that can be overridden in order to achieve the desired style. Overrides should be added for `.adyen-document-viewer` class.
