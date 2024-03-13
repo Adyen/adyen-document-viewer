@@ -25,8 +25,8 @@ export default class AdyenDocumentViewer {
     }
 
     this.options = {
-      onExpandSection: options.onExpandSection || undefined,
-      multiple: options.multiple || false,
+      onExpandSection: options.onExpandSection ?? undefined,
+      multiple: options.multiple ?? false,
     };
   }
 
