@@ -1,6 +1,7 @@
-import { createElement, ComponentChildren } from 'preact';
-import cx from 'classnames';
 import './Heading.scss';
+
+import cx from 'classnames';
+import { ComponentChildren, createElement } from 'preact';
 
 export interface HeadingProps {
   children: ComponentChildren | string;

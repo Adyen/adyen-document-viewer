@@ -1,5 +1,6 @@
-import { h } from 'preact';
 import cx from 'classnames';
+import { h } from 'preact';
+
 import { ListItemProps } from './types';
 
 function ListItem({ className, children, noMarkers }: ListItemProps) {

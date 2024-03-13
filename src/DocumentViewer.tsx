@@ -1,16 +1,19 @@
-import { h } from 'preact';
-import { DocumentViewerProps } from './types';
 import './DocumentViewer.scss';
+
 import cx from 'classnames';
+import { h } from 'preact';
+
+import ContentElements from './components/ContentElements/ContentElements';
 import Heading from './components/Heading/Heading';
 import Text from './components/Text/Text';
-import ContentElements from './components/ContentElements/ContentElements';
 import { ReferenceContextProvider } from './ReferenceContext/ReferenceContextProvider';
+import { DocumentViewerProps } from './types';
 
 export default function DocumentViewer({
   document,
   className,
   onExpandSection,
+  multiple,
 }: DocumentViewerProps) {
   const classNames = cx('adyen-document-viewer', className);
 
@@ -23,6 +26,7 @@ export default function DocumentViewer({
         <ContentElements
           contentElements={document.contentElements}
           onExpandSection={onExpandSection}
+          multiple={multiple}
           isTopLevel
         />
       </div>

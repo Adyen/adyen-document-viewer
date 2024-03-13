@@ -1,6 +1,6 @@
-import { h } from 'preact';
-
 import '../Link/Link.scss';
+
+import { h } from 'preact';
 
 interface LinkButtonProps {
   onClick?: () => void;

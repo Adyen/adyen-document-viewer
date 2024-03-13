@@ -1,10 +1,11 @@
 import { h } from 'preact';
-import { InternalReferenceProps } from '../../types';
-import LinkButton from '../LinkButton/LinkButton';
-import { getScrollParent } from '../../utils/scroll';
-import { formatId } from '../../utils/format-id';
+
 import { useReferenceContext } from '../../ReferenceContext/useReferenceContext';
+import { InternalReferenceProps } from '../../types';
 import { delay } from '../../utils/delay';
+import { formatId } from '../../utils/format-id';
+import { getScrollParent } from '../../utils/scroll';
+import LinkButton from '../LinkButton/LinkButton';
 
 export default function InternalReference({
   referencedLabel: originalReferencedLabel,
@@ -20,7 +21,7 @@ export default function InternalReference({
       await delay(150);
     }
     const scrollParent = getScrollParent(document.getElementById(referencedLabel));
-    const element = scrollParent !== -1 && scrollParent.querySelector('#' + referencedLabel);
+    const element = scrollParent?.querySelector(`#${referencedLabel}`);
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 

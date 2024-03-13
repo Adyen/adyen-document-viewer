@@ -1,284 +1,288 @@
 export default {
-  "title": {
-    "type": "text",
-    "content": "Example document",
-    "styles": []
+  title: {
+    type: 'text',
+    content: 'Example document',
+    styles: [],
   },
-  "contentElements": [
+  contentElements: [
     {
-      "type": "chapter",
-      "title": {
-        "type": "text",
-        "content": "First chapter",
-        "styles": []
+      type: 'chapter',
+      title: {
+        type: 'text',
+        content: 'First chapter',
+        styles: [],
       },
-      "contentElements": [
+      contentElements: [
         {
-          "type": "section",
-          "title": {
-            "type": "text",
-            "content": "First section",
-            "styles": []
+          type: 'section',
+          title: {
+            type: 'text',
+            content: 'First section',
+            styles: [],
           },
-          "label": "1",
-          "contentElements": [
+          label: '1',
+          contentElements: [
             {
-              "type": "paragraph",
-              "contentElements": [
+              type: 'paragraph',
+              contentElements: [
                 {
-                  "type": "text",
-                  "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
-                  "styles": []
+                  type: 'text',
+                  content:
+                    'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+                  styles: [],
                 },
                 {
-                  "type": "weblink",
-                  "url": "https://www.lipsum.com",
-                  "displayText": {
-                    "type": "text",
-                    "content": "Lorem Ipsum",
-                    "styles": []
-                  }
-                },
-                {
-                  "type": "text",
-                  "content": " has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-                  "styles": []
-                },
-                {
-                  "type": "text",
-                  "content": " This is a bold and italic example. ",
-                  "styles": ["BOLD", "ITALIC"]
-                },
-                {
-                  "type": "internalReference",
-                  "referencedLabel": "tableReference",
-                  "displayText": {
-                    "type": "text",
-                    "content": "This should take you to the table in the section below.",
-                    "styles": []
-                  }
-                },
-                {
-                  "type": "paragraph",
-                  "contentElements": [
-                    {
-                      "type": "text",
-                      "content": "Below we have a list:",
-                      "styles": []
-                    }
-                  ]
-                },
-                {
-                  "type": "list",
-                  "style": {
-                    "ordered": true
+                  type: 'weblink',
+                  url: 'https://www.lipsum.com',
+                  displayText: {
+                    type: 'text',
+                    content: 'Lorem Ipsum',
+                    styles: [],
                   },
-                  "items": [
+                },
+                {
+                  type: 'text',
+                  content:
+                    ' has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+                  styles: [],
+                },
+                {
+                  type: 'text',
+                  content: ' This is a bold and italic example. ',
+                  styles: ['BOLD', 'ITALIC'],
+                },
+                {
+                  type: 'internalReference',
+                  referencedLabel: 'tableReference',
+                  displayText: {
+                    type: 'text',
+                    content: 'This should take you to the table in the section below.',
+                    styles: [],
+                  },
+                },
+                {
+                  type: 'paragraph',
+                  contentElements: [
                     {
-                      "content": [
+                      type: 'text',
+                      content: 'Below we have a list:',
+                      styles: [],
+                    },
+                  ],
+                },
+                {
+                  type: 'list',
+                  style: {
+                    ordered: true,
+                  },
+                  items: [
+                    {
+                      content: [
                         {
-                          "type": "text",
-                          "content": "first item in BI.",
-                          "styles": ["BOLD", "ITALIC"]
-                        }
+                          type: 'text',
+                          content: 'first item in BI.',
+                          styles: ['BOLD', 'ITALIC'],
+                        },
                       ],
-                      "subList": null
+                      subList: null,
                     },
                     {
-                      "content": [
+                      content: [
                         {
-                          "type": "text",
-                          "content": "Second item:",
-                          "styles": []
-                        }
-                      ],
-                      "subList": {
-                        "type": "list",
-                        "style": {
-                          "ordered": false
+                          type: 'text',
+                          content: 'Second item:',
+                          styles: [],
                         },
-                        "items": [
+                      ],
+                      subList: {
+                        type: 'list',
+                        style: {
+                          ordered: false,
+                        },
+                        items: [
                           {
-                            "content": [
+                            content: [
                               {
-                                "type": "text",
-                                "content": "First Sub item:",
-                                "styles": []
-                              }
-                            ],
-                            "subList": null
-                          },
-                          {
-                            "content": [
-                              {
-                                "type": "internalReference",
-                                "referencedLabel": "2",
-                                "displayText": {
-                                  "type": "text",
-                                  "content": "Second section",
-                                  "styles": []
-                                }
-                              }
-                            ],
-                            "subList": null
-                          },
-                          {
-                            "content": [
-                              {
-                                "type": "text",
-                                "content": "Third List item:",
-                                "styles": []
-                              }
-                            ],
-                            "subList": {
-                              "type": "list",
-                              "style": {
-                                "ordered": true
+                                type: 'text',
+                                content: 'First Sub item:',
+                                styles: [],
                               },
-                              "items": [
+                            ],
+                            subList: null,
+                          },
+                          {
+                            content: [
+                              {
+                                type: 'internalReference',
+                                referencedLabel: '2',
+                                displayText: {
+                                  type: 'text',
+                                  content: 'Second section',
+                                  styles: [],
+                                },
+                              },
+                            ],
+                            subList: null,
+                          },
+                          {
+                            content: [
+                              {
+                                type: 'text',
+                                content: 'Third List item:',
+                                styles: [],
+                              },
+                            ],
+                            subList: {
+                              type: 'list',
+                              style: {
+                                ordered: true,
+                              },
+                              items: [
                                 {
-                                  "content": [
+                                  content: [
                                     {
-                                      "type": "text",
-                                      "content": "First Sub Sub item:",
-                                      "styles": "[Array(0)]"
-                                    }
+                                      type: 'text',
+                                      content: 'First Sub Sub item:',
+                                      styles: '[Array(0)]',
+                                    },
                                   ],
-                                  "subList": null
-                                }
-                              ]
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+                                  subList: null,
+                                },
+                              ],
+                            },
+                          },
+                        ],
+                      },
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
         },
         {
-          "type": "section",
-          "title": {
-            "type": "text",
-            "content": "Second section",
-            "styles": []
+          type: 'section',
+          title: {
+            type: 'text',
+            content: 'Second section',
+            styles: [],
           },
-          "label": "2",
-          "contentElements": [
+          label: '2',
+          contentElements: [
             {
-              "type": "paragraph",
-              "contentElements": [
+              type: 'paragraph',
+              contentElements: [
                 {
-                  "type": "internalReference",
-                  "referencedLabel": "tableReference",
-                  "displayText": {
-                    "type": "text",
-                    "content": "This should take you to the table below.",
-                    "styles": []
-                  }
+                  type: 'internalReference',
+                  referencedLabel: 'tableReference',
+                  displayText: {
+                    type: 'text',
+                    content: 'This should take you to the table below.',
+                    styles: [],
+                  },
                 },
                 {
-                  "type": "text",
-                  "content": " Lorem Ipsum is simply dummy text of the printing and typesetting industry. ",
-                  "styles": []
+                  type: 'text',
+                  content:
+                    ' Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+                  styles: [],
                 },
                 {
-                  "type": "weblink",
-                  "url": "https://www.lipsum.com",
-                  "displayText": {
-                    "type": "text",
-                    "content": "Lorem Ipsum",
-                    "styles": []
-                  }
+                  type: 'weblink',
+                  url: 'https://www.lipsum.com',
+                  displayText: {
+                    type: 'text',
+                    content: 'Lorem Ipsum',
+                    styles: [],
+                  },
                 },
                 {
-                  "type": "text",
-                  "content": " has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-                  "styles": []
+                  type: 'text',
+                  content:
+                    ' has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+                  styles: [],
                 },
                 {
-                  "type": "table",
-                  "rows": [
+                  type: 'table',
+                  rows: [
                     [
                       {
-                        "elements": [
+                        elements: [
                           {
-                            "type": "text",
-                            "content": "Row 1",
-                            "styles": ["BOLD"]
-                          }
-                        ]
+                            type: 'text',
+                            content: 'Row 1',
+                            styles: ['BOLD'],
+                          },
+                        ],
                       },
                       {
-                        "elements": [
+                        elements: [
                           {
-                            "type": "text",
-                            "content": "We have a website here",
-                            "styles": []
+                            type: 'text',
+                            content: 'We have a website here',
+                            styles: [],
                           },
                           {
-                            "type": "breakline"
+                            type: 'breakline',
                           },
                           {
-                            "type": "weblink",
-                            "url": "https://www.exampleurlgoeshere.com",
-                            "displayText": null
-                          }
-                        ]
-                      }
+                            type: 'weblink',
+                            url: 'https://www.exampleurlgoeshere.com',
+                            displayText: null,
+                          },
+                        ],
+                      },
                     ],
                     [
                       {
-                        "elements": [
+                        elements: [
                           {
-                            "type": "text",
-                            "content": "Row 2",
-                            "styles": ["BOLD"]
-                          }
-                        ]
+                            type: 'text',
+                            content: 'Row 2',
+                            styles: ['BOLD'],
+                          },
+                        ],
                       },
                       {
-                        "elements": [
+                        elements: [
                           {
-                            "type": "text",
-                            "content": "Just some text on the first line",
-                            "styles": []
+                            type: 'text',
+                            content: 'Just some text on the first line',
+                            styles: [],
                           },
                           {
-                            "type": "breakline"
+                            type: 'breakline',
                           },
                           {
-                            "type": "text",
-                            "content": "Just some text on the next line",
-                            "styles": []
-                          }
-                        ]
-                      }
-                    ]
+                            type: 'text',
+                            content: 'Just some text on the next line',
+                            styles: [],
+                          },
+                        ],
+                      },
+                    ],
                   ],
-                  "titlePrefix": {
-                    "type": "text",
-                    "content": "1.",
-                    "styles": []
+                  titlePrefix: {
+                    type: 'text',
+                    content: '1.',
+                    styles: [],
                   },
-                  "title": {
-                    "type": "text",
-                    "content": "Lorem Ipsum",
-                    "styles": []
+                  title: {
+                    type: 'text',
+                    content: 'Lorem Ipsum',
+                    styles: [],
                   },
-                  "style": {
-                    "columnSizes": ["SMALL", "LARGE"],
-                    "alignment": "LEFT"
+                  style: {
+                    columnSizes: ['SMALL', 'LARGE'],
+                    alignment: 'LEFT',
                   },
-                  "label": "tableReference"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  ]
-}
+                  label: 'tableReference',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ],
+};
