@@ -1,14 +1,19 @@
-import { h } from 'preact';
-import cx from 'classnames';
 import './Icon.scss';
+
+import cx from 'classnames';
+import { h, JSX } from 'preact';
 
 interface IconProps {
   name: string;
   className?: string;
 }
 
+interface IconTypes {
+  [key: string]: JSX.Element;
+}
+
 const Icon = ({ className = '', name }: IconProps) => {
-  const iconTypes = {
+  const iconTypes: IconTypes = {
     'chevron-up': (
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 15" width="15" height="15">
         <path

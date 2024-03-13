@@ -1,12 +1,14 @@
+import './AccordionItem.scss';
+
 import { h } from 'preact';
-import useAccordionContext from './useAccordionContext';
-import { AccordionItemProps } from './types';
+import { useEffect, useState } from 'preact/hooks';
+
+import { getUniqueId } from '../../utils/id-generator';
+import { AccordionContextType, AccordionSection } from '../Accordion/types';
 import CollapsibleContainer from '../CollapsibleContainer/CollapsibleContainer';
 import Icon from '../Icon/Icon';
-import { getUniqueId } from '../../utils/id-generator';
-import { useState, useEffect } from 'preact/hooks';
-import { AccordionItemState } from '../Accordion/types';
-import './AccordionItem.scss';
+import { AccordionItemProps } from './types';
+import useAccordionContext from './useAccordionContext';
 
 export default function AccordionItem({
   children,
@@ -15,18 +17,19 @@ export default function AccordionItem({
   onOpen = () => {},
   onClose = () => {},
 }: AccordionItemProps) {
-  const { expand, items, setItems, onExpandSection } = useAccordionContext();
+  const { expand, items, setItems, onExpandSection } =
+    useAccordionContext() as AccordionContextType;
 
   const [isOpen, setIsOpen] = useState<boolean>(open);
   const [id] = useState<string>(getUniqueId);
 
   const toggle = () => {
     const newValue = !isOpen;
-    const newItems: AccordionItemState[] = [...items];
+    const newItems: AccordionSection[] = [...items];
     if (!expand) {
       setItems(newItems.map((item) => ({ ...item, isOpen: item.id === id ? newValue : false })));
     } else {
-      newItems.find((item) => item.id === id).isOpen = newValue;
+      newItems.find((item) => item.id === id)!.isOpen = newValue;
       setItems(newItems);
     }
   };
@@ -40,7 +43,7 @@ export default function AccordionItem({
   }, [open]);
 
   useEffect(() => {
-    setIsOpen(items.find((item) => item.id === id)?.isOpen);
+    setIsOpen(items.find((item) => item.id === id)?.isOpen ?? false);
   }, [items]);
 
   useEffect(() => {

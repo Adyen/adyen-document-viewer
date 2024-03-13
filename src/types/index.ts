@@ -71,10 +71,13 @@ export type Element =
 export type DocumentViewerProps = {
   document: Document;
   className?: string;
+  multiple?: boolean;
 } & DocumentViewerAnalytics;
 export type ContentElementsProps = ElementWithInnerContent &
   TopLevelElement &
-  DocumentViewerAnalytics;
+  DocumentViewerAnalytics & {
+    multiple?: boolean;
+  };
 export type ChapterProps = Omit<Chapter, 'type'>;
 export type SectionProps = Omit<Section & TopLevelElement, 'type'>;
 export type ParagraphProps = Omit<Paragraph & TopLevelElement, 'type'>;
@@ -83,3 +86,8 @@ export type WeblinkProps = Omit<Weblink, 'type'>;
 export type ListProps = Omit<List, 'type'>;
 export type TableProps = Omit<Table, 'type'>;
 export type InternalReferenceProps = Omit<InternalReference, 'type'>;
+
+export interface AdyenDocumentViewerOptions {
+  onExpandSection?: (sectionId: string) => void;
+  multiple?: boolean;
+}

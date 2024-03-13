@@ -1,9 +1,11 @@
-import { h } from 'preact';
-import { TableProps } from '../../types';
-import Text from '../Text/Text';
-import ContentElements from '../ContentElements/ContentElements';
 import './Table.scss';
+
+import { h } from 'preact';
+
+import { TableProps } from '../../types';
 import { formatId } from '../../utils/format-id';
+import ContentElements from '../ContentElements/ContentElements';
+import Text from '../Text/Text';
 
 export default function Table({
   rows,

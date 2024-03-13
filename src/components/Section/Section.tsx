@@ -1,15 +1,17 @@
-import { h } from 'preact';
-import { SectionProps } from '../../types';
-import Heading from '../Heading/Heading';
-import Text from '../Text/Text';
 import './Section.scss';
+
+import { h } from 'preact';
+import { useEffect, useState } from 'preact/hooks';
+
+import { useReferenceContext } from '../../ReferenceContext/useReferenceContext';
+import { SectionProps } from '../../types';
+import { formatId } from '../../utils/format-id';
 import AccordionItem from '../AccordionItem/AccordionItem';
 import ContentElements from '../ContentElements/ContentElements';
-import { useEffect, useState } from 'preact/hooks';
-import { useReferenceContext } from '../../ReferenceContext/useReferenceContext';
-import { formatId } from '../../utils/format-id';
+import Heading from '../Heading/Heading';
+import Text from '../Text/Text';
 
-const extractLabels = (obj) => {
+const extractLabels = (obj: any): string[] => {
   if (typeof obj !== 'object' || obj === null) {
     return [];
   }
@@ -18,7 +20,7 @@ const extractLabels = (obj) => {
     return [obj.label];
   }
 
-  return Object.values(obj).flatMap((value) => extractLabels(value));
+  return Object.values(obj).flatMap((value: any) => extractLabels(value));
 };
 
 export default function Section({

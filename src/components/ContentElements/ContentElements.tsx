@@ -1,15 +1,16 @@
 import { h, VNode } from 'preact';
-import { Element, ContentElementsProps, ElementTypes } from '../../types';
+
+import { ContentElementsProps, Element, ElementTypes } from '../../types';
 import { getUniqueId } from '../../utils/id-generator';
 import Accordion from '../Accordion/Accordion';
 import Chapter from '../Chapter/Chapter';
-import Section from '../Section/Section';
+import InternalReference from '../InternalReference/InternalReference';
+import List from '../ListElemennt/List';
 import Paragraph from '../Paragraph/Paragraph';
+import Section from '../Section/Section';
+import Table from '../Table/Table';
 import Text from '../Text/Text';
 import Weblink from '../Weblink/Weblink';
-import List from '../ListElemennt/List';
-import Table from '../Table/Table';
-import InternalReference from '../InternalReference/InternalReference';
 
 const components = {
   chapter: Chapter,
@@ -82,6 +83,7 @@ export default function ContentElements({
   contentElements,
   isTopLevel = false,
   onExpandSection,
+  multiple,
 }: ContentElementsProps) {
   const elements = contentElements.map((contentElement): VNode | null => {
     if (!('type' in contentElement)) return null;
@@ -93,7 +95,7 @@ export default function ContentElements({
   });
 
   return isTopLevel ? (
-    <Accordion onExpandSection={onExpandSection} expand>
+    <Accordion onExpandSection={onExpandSection} expand={multiple}>
       {elements}
     </Accordion>
   ) : (
