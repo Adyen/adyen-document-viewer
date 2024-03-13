@@ -15,7 +15,8 @@
 }
 
 @mixin adv-focus-ring {
-  box-shadow: 0 0 0 var(--adv-focus-ring-distance) var(--adv-focus-ring-background-color),
+  box-shadow:
+    0 0 0 var(--adv-focus-ring-distance) var(--adv-focus-ring-background-color),
     0 0 0 var(--adv-focus-ring-width) var(--adv-focus-ring-color);
   transition: var(--adv-focus-ring-transition-duration) var(--adv-focus-ring-timing-function);
   transition-property: box-shadow;
