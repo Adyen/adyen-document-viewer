@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "classnames": "2.5.1",
-    "preact": "10.19.3"
+    "preact": "10.24.1"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.8.1",
