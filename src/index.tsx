@@ -3,8 +3,6 @@ import { h, render } from 'preact';
 import DocumentViewer from './DocumentViewer';
 import { AdyenDocumentViewerOptions, Document } from './types';
 
-export * from './types';
-
 export default class AdyenDocumentViewer {
   private readonly target: HTMLElement;
   private readonly options: AdyenDocumentViewerOptions;
