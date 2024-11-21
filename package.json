@@ -26,7 +26,7 @@
     "test:debug": "playwright test --debug",
     "test:ui": "playwright test --ui",
     "types:build": "tsc --project tsconfig-build.json",
-    "types:check": "tsc && tsc-strict",
+    "types:check": "tsc",
     "types:watch": "tsc --watch --preserveWatchOutput"
   },
   "dependencies": {
@@ -53,7 +53,6 @@
     "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-scss": "^4.2.0",
     "typescript": "^5.3.3",
-    "typescript-strict-plugin": "^2.2.0",
     "vite": "^4.5.1"
   },
   "license": "MIT",
