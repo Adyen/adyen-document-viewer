@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adyen Document Viewer Example</title>
+
+    <link rel="stylesheet" href="/adyen-document-viewer.min.css" />
+  </head>
+  <body>
+    <div id="document-viewer"></div>
+
+    <script type="module">
+      import AdyenDocumentViewer from '/adyen-document-viewer.min.mjs?url';
+      import exampleDocument from './mock-data';
+
+      const documentViewer = new AdyenDocumentViewer('#document-viewer', {
+        onExpandSection: (sectionTitle) => console.log(`${sectionTitle} expanded`),
+        multiple: false,
+      });
+
+      documentViewer.render(exampleDocument);
+    </script>
+  </body>
+</html>
