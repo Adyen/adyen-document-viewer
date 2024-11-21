@@ -21,6 +21,9 @@
     "prettier": "prettier --config ./prettier.config.js --ignore-unknown --check \"**/*\"",
     "prettier:fix": "prettier --config ./prettier.config.js --ignore-unknown --write \"**/*\"",
     "fix:all": "npm run prettier:fix && npm run lint:fix",
+    "test": "playwright test",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
     "types:build": "tsc --project tsconfig-build.json",
     "types:check": "tsc && tsc-strict",
     "types:watch": "tsc --watch --preserveWatchOutput"
@@ -30,6 +33,7 @@
     "preact": "10.19.3"
   },
   "devDependencies": {
+    "@playwright/test": "^1.45.3",
     "@preact/preset-vite": "^2.8.1",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
