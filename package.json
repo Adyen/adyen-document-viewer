@@ -16,6 +16,7 @@
   "scripts": {
     "start": "vite",
     "build": "vite build && npm run types:build",
+    "check:all": "npm run types:check && npm run lint && npm run prettier",
     "lint": "eslint 'src/**/*.{js,ts,tsx}'",
     "lint:fix": "npm run lint -- --fix",
     "prettier": "prettier --config ./prettier.config.js --ignore-unknown --check \"**/*\"",

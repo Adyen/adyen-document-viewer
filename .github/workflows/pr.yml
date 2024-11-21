@@ -1,0 +1,41 @@
+name: PR CI
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths-ignore:
+      - README.md
+      - LICENSE
+      - .gitignore
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+
+      - run: npm i
+      - run: npm run check:all
+
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+
+      - run: npm i
+      - run: npm run build
+
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+
+      - run: npm i
+      - run: npx playwright install
+      - run: npm run test
