@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "classnames": "2.5.1",
-    "preact": "10.19.3"
+    "preact": "10.25.1"
   },
   "devDependencies": {
     "@playwright/test": "^1.45.3",
