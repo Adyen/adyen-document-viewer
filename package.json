@@ -49,7 +49,7 @@
     "prettier": "3.2.4",
     "sass": "^1.70.0",
     "stylelint": "^14.1.0",
-    "stylelint-config-recommended": "^6.0.0",
+    "stylelint-config-recommended": "^14.0.0",
     "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-scss": "^4.2.0",
     "typescript": "^5.3.3",
