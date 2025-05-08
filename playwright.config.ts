@@ -7,7 +7,7 @@ const IS_CI = Boolean(process.env.CI);
  * See https://playwright.dev/docs/test-configuration.
  */
 const config: PlaywrightTestConfig = {
-  testDir: './tests',
+  testDir: './tests/e2e',
   timeout: 5 * 1000,
   expect: {
     timeout: 1000,

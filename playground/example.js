@@ -6,6 +6,7 @@ import exampleDocument from './mock-data';
 const documentViewer = new AdyenDocumentViewer('#document-viewer', {
   onExpandSection: (sectionTitle) => console.log(`${sectionTitle} expanded`),
   multiple: false,
+  showSectionNumbering: true,
 });
 
 documentViewer.render(exampleDocument);
