@@ -27,7 +27,11 @@ export interface TopLevelElement {
 // Elements
 export type Document = ElementWithInnerContent & { title: Text };
 type Chapter = ElementWithInnerContent & { type: ElementTypes.Chapter; title: Text };
-type Section = ElementWithInnerContent & { type: ElementTypes.Section; title: Text; label: string };
+export type Section = ElementWithInnerContent & {
+  type: ElementTypes.Section;
+  title: Text;
+  label: string;
+};
 type Paragraph = ElementWithInnerContent & { type: ElementTypes.Paragraph };
 type Text = { type: ElementTypes.Text; content: string; styles?: TextStyle[] };
 type Weblink = { type: ElementTypes.Weblink; url: string; displayText: Text };
@@ -90,4 +94,5 @@ export type InternalReferenceProps = Omit<InternalReference, 'type'>;
 export interface AdyenDocumentViewerOptions {
   onExpandSection?: (sectionId: string) => void;
   multiple?: boolean;
+  showSectionNumbering?: boolean;
 }

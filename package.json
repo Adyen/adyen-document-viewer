@@ -25,6 +25,7 @@
     "test": "playwright test",
     "test:debug": "playwright test --debug",
     "test:ui": "playwright test --ui",
+    "test:unit": "vitest",
     "types:build": "tsc --project tsconfig-build.json",
     "types:check": "tsc",
     "types:watch": "tsc --watch --preserveWatchOutput"
@@ -53,7 +54,8 @@
     "stylelint-config-sass-guidelines": "^9.0.1",
     "stylelint-scss": "^4.2.0",
     "typescript": "^5.3.3",
-    "vite": "^4.5.1"
+    "vite": "^4.5.1",
+    "vitest": "^2.1.9"
   },
   "license": "MIT",
   "repository": {
