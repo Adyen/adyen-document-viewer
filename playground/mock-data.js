@@ -65,7 +65,7 @@ export default {
                   contentElements: [
                     {
                       type: 'text',
-                      content: 'Below we have a list:',
+                      content: 'Below we have a list of items:',
                       styles: [],
                     },
                   ],
@@ -80,7 +80,7 @@ export default {
                       content: [
                         {
                           type: 'text',
-                          content: 'first item in BI.',
+                          content: 'First item in bold and italic.',
                           styles: ['BOLD', 'ITALIC'],
                         },
                       ],
@@ -90,7 +90,7 @@ export default {
                       content: [
                         {
                           type: 'text',
-                          content: 'Second item:',
+                          content: 'Second item with a nested list:',
                           styles: [],
                         },
                       ],
@@ -104,7 +104,7 @@ export default {
                             content: [
                               {
                                 type: 'text',
-                                content: 'First Sub item:',
+                                content: 'First sub-item in the nested list.',
                                 styles: [],
                               },
                             ],
@@ -117,7 +117,7 @@ export default {
                                 referencedLabel: '2',
                                 displayText: {
                                   type: 'text',
-                                  content: 'Second section',
+                                  content: 'Second section reference',
                                   styles: [],
                                 },
                               },
@@ -128,7 +128,7 @@ export default {
                             content: [
                               {
                                 type: 'text',
-                                content: 'Third List item:',
+                                content: 'Third sub-item with another nested list:',
                                 styles: [],
                               },
                             ],
@@ -142,8 +142,8 @@ export default {
                                   content: [
                                     {
                                       type: 'text',
-                                      content: 'First Sub Sub item:',
-                                      styles: '[Array(0)]',
+                                      content: 'First sub-sub-item in the deeper list.',
+                                      styles: [],
                                     },
                                   ],
                                   subList: null,
@@ -184,22 +184,21 @@ export default {
                 {
                   type: 'text',
                   content:
-                    ' Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+                    'This paragraph provides additional placeholder text for the second section.',
                   styles: [],
                 },
                 {
                   type: 'weblink',
-                  url: 'https://www.lipsum.com',
+                  url: 'https://www.example.com',
                   displayText: {
                     type: 'text',
-                    content: 'Lorem Ipsum',
+                    content: 'Example Link',
                     styles: [],
                   },
                 },
                 {
                   type: 'text',
-                  content:
-                    ' has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
+                  content: ' It serves as a distinct piece of content for testing purposes.',
                   styles: [],
                 },
                 {
@@ -269,7 +268,7 @@ export default {
                   },
                   title: {
                     type: 'text',
-                    content: 'Lorem Ipsum',
+                    content: 'Sample Table',
                     styles: [],
                   },
                   style: {
@@ -277,6 +276,69 @@ export default {
                     alignment: 'LEFT',
                   },
                   label: 'tableReference',
+                },
+              ],
+            },
+            {
+              type: 'section',
+              title: {
+                type: 'text',
+                content: 'This is a section inside the second section',
+                styles: [],
+              },
+              label: '1',
+              contentElements: [
+                {
+                  type: 'paragraph',
+                  contentElements: [
+                    {
+                      type: 'text',
+                      content: 'This is unique content for a subsection paragraph.',
+                      styles: [],
+                    },
+                  ],
+                },
+                {
+                  type: 'section',
+                  title: {
+                    type: 'text',
+                    content: 'This is a subsection ',
+                    styles: [],
+                  },
+                  label: '1',
+                  contentElements: [
+                    {
+                      type: 'paragraph',
+                      contentElements: [
+                        {
+                          type: 'text',
+                          content: 'This is placeholder text for a nested subsection.',
+                          styles: [],
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              type: 'section',
+              title: {
+                type: 'text',
+                content: 'This is another section inside the second section',
+                styles: [],
+              },
+              label: '1',
+              contentElements: [
+                {
+                  type: 'paragraph',
+                  contentElements: [
+                    {
+                      type: 'text',
+                      content: 'This paragraph contains additional distinct mock text.',
+                      styles: [],
+                    },
+                  ],
                 },
               ],
             },

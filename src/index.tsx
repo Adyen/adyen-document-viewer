@@ -2,6 +2,7 @@ import { h, render } from 'preact';
 
 import DocumentViewer from './DocumentViewer';
 import { AdyenDocumentViewerOptions, Document } from './types';
+import { addSectionNumbering } from './utils/preprocessDocument';
 
 export type * from './types';
 
@@ -29,6 +30,7 @@ export default class AdyenDocumentViewer {
     this.options = {
       onExpandSection: options.onExpandSection ?? undefined,
       multiple: options.multiple ?? false,
+      showSectionNumbering: options.showSectionNumbering ?? false,
     };
   }
 
@@ -37,9 +39,13 @@ export default class AdyenDocumentViewer {
    * @param document - The JSON document
    */
   render(document: Document): void {
+    const processedDocument = this.options.showSectionNumbering
+      ? addSectionNumbering(document)
+      : document;
+
     render(
       <DocumentViewer
-        document={document}
+        document={processedDocument}
         onExpandSection={this.options.onExpandSection}
         multiple={this.options.multiple}
       />,

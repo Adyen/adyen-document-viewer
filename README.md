@@ -51,10 +51,12 @@ Include the script and stylesheet to a `.html` file
 
 You can customize the behavior of `AdyenDocumentViewer` by passing options during initialization.
 
-| Option            | Description                                             | Default     |
-| ----------------- | ------------------------------------------------------- | ----------- |
-| `onExpandSection` | Callback function triggered when a section is expanded. | `undefined` |
-| `multiple`        | Allow multiple sections to be expanded simultaneously.  | `false`     |
+| Option                 | Description                                             | Default     |
+|------------------------| ------------------------------------------------------- | ----------- |
+| `onExpandSection`      | Callback function triggered when a section is expanded. | `undefined` |
+| `multiple`             | Allow multiple sections to be expanded simultaneously.  | `false`     |
+| `showSectionNumbering` | Enable or disable section numbering.                    | `false`     |
+
 
 You can provide an object with the options as the second parameter when creating an instance of `AdyenDocumentViewer`:
 
@@ -62,6 +64,7 @@ You can provide an object with the options as the second parameter when creating
 const options = {
   onExpandSection: (sectionTitle) => console.log(`Section ${sectionTitle} expanded`),
   multiple: true,
+  showSectionNumbering: true,
 };
 
 const documentViewer = new AdyenDocumentViewer('#test', options);

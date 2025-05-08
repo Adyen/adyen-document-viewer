@@ -29,13 +29,31 @@ jobs:
       - run: npm i
       - run: npm run build
 
-  test:
+  unit-tests:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v4
 
-      - run: npm i
-      - run: npx playwright install
-      - run: npm run test
+      - name: Install dependencies
+        run: npm i
+
+      - name: Run unit tests
+        run: npm run test:unit
+
+  e2e-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm i
+
+      - name: Install Playwright dependencies
+        run: npx playwright install
+
+      - name: Run E2E tests
+        run: npm run test
