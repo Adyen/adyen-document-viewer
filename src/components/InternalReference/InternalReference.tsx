@@ -11,8 +11,8 @@ export default function InternalReference({
   referencedLabel: originalReferencedLabel,
   displayText,
 }: InternalReferenceProps) {
+  const label = displayText ? displayText.content : originalReferencedLabel;
   const referencedLabel = formatId(originalReferencedLabel) ?? '';
-  const label = displayText ? displayText.content : referencedLabel;
   const { references } = useReferenceContext();
   const scrollIntoView = async () => {
     if (references && referencedLabel && references[referencedLabel]) {
