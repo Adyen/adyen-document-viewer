@@ -8,7 +8,7 @@ interface LinkButtonProps {
 }
 
 const LinkButton = ({ onClick, label }: LinkButtonProps) => (
-  <button className="adv-link" type="button" onClick={onClick}>
+  <button className="adv-link" type="button" onClick={onClick} title={label}>
     {label}
   </button>
 );
