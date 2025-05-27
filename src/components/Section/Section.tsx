@@ -11,16 +11,22 @@ import ContentElements from '../ContentElements/ContentElements';
 import Heading from '../Heading/Heading';
 import Text from '../Text/Text';
 
-const extractLabels = (obj: any): string[] => {
-  if (typeof obj !== 'object' || obj === null) {
-    return [];
+export const extractLabels = (obj: any): string[] => {
+  if (typeof obj !== 'object' || obj === null) return [];
+
+  const labels: string[] = [];
+  if ('label' in obj && typeof obj.label === 'string' && obj.label !== '') {
+    labels.push(obj.label);
   }
 
-  if ('label' in obj) {
-    return [obj.label];
+  for (const key in obj) {
+    const value = obj[key];
+    if (Array.isArray(value) || (typeof value === 'object' && value !== null)) {
+      labels.push(...extractLabels(value));
+    }
   }
 
-  return Object.values(obj).flatMap((value: any) => extractLabels(value));
+  return labels;
 };
 
 export default function Section({
