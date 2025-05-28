@@ -20,6 +20,7 @@ export default function Table({
     <div id={label}>
       <div className="adv-u-margin-y-8 adv-u-text-align-center">
         {titlePrefix && <Text {...titlePrefix} />}
+        {titlePrefix && title && ' '}
         {title && <Text {...title} />}
       </div>
 

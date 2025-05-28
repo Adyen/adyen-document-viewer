@@ -40,7 +40,7 @@ type ListStyle = { ordered: boolean };
 type ListItem = { content: Element[]; subList: List };
 type TableCell = { elements: Element[] };
 type TableRow = TableCell[];
-type Table = {
+export type Table = {
   type: ElementTypes.Table;
   rows: TableRow[];
   label: string;
@@ -48,7 +48,7 @@ type Table = {
   titlePrefix: Text;
   title: Text;
 };
-type InternalReference = {
+export type InternalReference = {
   type: ElementTypes.InternalReference;
   referencedLabel: string;
   displayText: Text;

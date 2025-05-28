@@ -8,6 +8,9 @@
   color: var(--adv-link-color);
   cursor: pointer;
   display: inline;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
   padding: 0;
   text-decoration: var(--adv-link-text-decoration);
   vertical-align: baseline;
