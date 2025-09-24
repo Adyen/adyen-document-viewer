@@ -12,6 +12,8 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     timeout-minutes: 2
+    permissions:
+      contents: read
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v4
@@ -22,6 +24,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 2
+    permissions:
+      contents: read
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v4
@@ -32,6 +36,8 @@ jobs:
   unit-tests:
     runs-on: ubuntu-latest
     timeout-minutes: 3
+    permissions:
+      contents: read
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v4
@@ -45,6 +51,8 @@ jobs:
   e2e-tests:
     runs-on: ubuntu-latest
     timeout-minutes: 3
+    permissions:
+      contents: read
     steps:
       - name: Checkout the repo
         uses: actions/checkout@v4
