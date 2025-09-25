@@ -1,16 +1,18 @@
-@import 'src/style/mixins';
+@use '@/style/mixins' as adv;
 
 @mixin adv-table {
-  @include adv-component-base;
+  @include adv.adv-component-base;
 
-  border: var(--adv-table-border);
-  border-collapse: collapse;
-  border-spacing: 0;
-  line-height: var(--adv-table-line-height);
-  margin: var(--adv-table-margin);
-  padding: var(--adv-table-padding);
-  text-align: left;
-  width: var(--adv-table-width);
+  & {
+    border: var(--adv-table-border);
+    border-collapse: collapse;
+    border-spacing: 0;
+    line-height: var(--adv-table-line-height);
+    margin: var(--adv-table-margin);
+    padding: var(--adv-table-padding);
+    text-align: left;
+    width: var(--adv-table-width);
+  }
 }
 
 @mixin adv-table--condensed(

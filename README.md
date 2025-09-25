@@ -251,7 +251,7 @@ To run the development environment:
    npm install
    ```
 
-3. Run the development environment, which starts a server listening on [http://localhost:8080](http://localhost:8080):
+3. Run the development environment, which starts a server listening on [http://localhost:5174](http://localhost:5174):
 
    ```sh
    npm start

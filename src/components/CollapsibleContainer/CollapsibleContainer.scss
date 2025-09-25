@@ -1,9 +1,12 @@
-@import '../../style/mixins';
+@use '@/style/mixins' as adv;
 
 .adv-collapsible-container {
-  @include adv-component-base;
+  @include adv.adv-component-base;
 
-  overflow: hidden;
-  transition: height var(--adv-accordion-transition-duration)
-    var(--adv-accordion-transition-function);
+  /* stylelint-disable-next-line no-duplicate-selectors */
+  & {
+    overflow: hidden;
+    transition: height var(--adv-accordion-transition-duration)
+      var(--adv-accordion-transition-function);
+  }
 }

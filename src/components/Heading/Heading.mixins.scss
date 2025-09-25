@@ -1,15 +1,17 @@
-@import 'src/style/mixins';
+@use '@/style/mixins' as adv;
 
 @mixin adv-heading {
-  @include adv-component-base;
+  @include adv.adv-component-base;
 
-  display: block;
-  font-size: var(--adv-heading-font-size);
-  font-weight: var(--adv-heading-font-weight);
-  line-height: var(--adv-heading-line-height);
-  text-align: var(--adv-heading-text-align);
-  margin: 0;
-  padding: 0;
+  & {
+    display: block;
+    font-size: var(--adv-heading-font-size);
+    font-weight: var(--adv-heading-font-weight);
+    line-height: var(--adv-heading-line-height);
+    margin: 0;
+    padding: 0;
+    text-align: var(--adv-heading-text-align);
+  }
 }
 
 @mixin adv-heading--2 {

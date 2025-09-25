@@ -1,4 +1,7 @@
-@import 'src/style';
+@use 'style/variables' as *;
+@use 'style/utilities/alignment' as *;
+@use 'style/utilities/spacing' as *;
+@use 'style/utilities/typography' as *;
 
 .adyen-document-viewer {
   background-color: var(--adv-background-color);
