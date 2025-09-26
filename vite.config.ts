@@ -1,5 +1,6 @@
 import { setDefaultResultOrder } from 'node:dns';
 import { resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 import preact from '@preact/preset-vite';
 import { defineConfig } from 'vite';
@@ -12,13 +13,6 @@ setDefaultResultOrder('verbatim');
 export default defineConfig(() => ({
   root: resolve(__dirname, 'playground'),
   publicDir: resolve(__dirname, 'dist'),
-  css: {
-    modules: {
-      // TODO: Remove this after changing all of our SCSS @import to @use
-      scopeBehaviour: 'local',
-      generateScopedName: (name) => name,
-    },
-  },
   build: {
     lib: {
       name: 'AdyenDocumentViewer',
@@ -35,6 +29,11 @@ export default defineConfig(() => ({
     minify: true,
     outDir: resolve(__dirname, 'dist'),
     emptyOutDir: true,
+  },
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+    },
   },
   plugins: [preact()],
   server: {

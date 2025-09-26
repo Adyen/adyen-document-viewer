@@ -1,13 +1,15 @@
-@import 'src/style/mixins';
+@use '@/style/mixins' as adv;
 
 @mixin adv-list {
-  @include adv-component-base;
+  @include adv.adv-component-base;
 
-  display: block;
-  list-style-position: outside;
-  list-style-type: disc;
-  margin: var(--adv-list-margin);
-  padding: var(--adv-list-padding);
+  & {
+    display: block;
+    list-style-position: outside;
+    list-style-type: disc;
+    margin: var(--adv-list-margin);
+    padding: var(--adv-list-padding);
+  }
 }
 
 @mixin adv-list--ordered {

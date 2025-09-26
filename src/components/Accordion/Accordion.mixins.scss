@@ -1,7 +1,7 @@
-@import 'src/style/mixins';
+@use '@/style/mixins' as adv;
 
 @mixin adv-accordion {
-  @include adv-component-base;
+  @include adv.adv-component-base;
 }
 
 @mixin adv-accordion--container {
@@ -61,7 +61,7 @@
   }
 
   &:focus {
-    @include adv-focus-ring;
+    @include adv.adv-focus-ring;
 
     outline: none;
   }

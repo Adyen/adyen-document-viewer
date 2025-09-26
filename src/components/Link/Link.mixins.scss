@@ -1,19 +1,21 @@
-@import 'src/style/mixins';
+@use '@/style/mixins' as adv;
 
 @mixin adv-link {
-  @include adv-component-base;
+  @include adv.adv-component-base;
 
-  background-color: var(--adv-link-background-color);
-  border: 0;
-  color: var(--adv-link-color);
-  cursor: pointer;
-  display: inline;
-  max-width: 300px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding: 0;
-  text-decoration: var(--adv-link-text-decoration);
-  vertical-align: baseline;
+  & {
+    background-color: var(--adv-link-background-color);
+    border: 0;
+    color: var(--adv-link-color);
+    cursor: pointer;
+    display: inline;
+    max-width: 300px;
+    overflow: hidden;
+    padding: 0;
+    text-decoration: var(--adv-link-text-decoration);
+    text-overflow: ellipsis;
+    vertical-align: baseline;
+  }
 
   &:hover {
     text-decoration: var(--adv-link-hover-text-decoration);
