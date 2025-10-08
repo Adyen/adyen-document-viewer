@@ -1,5 +1,5 @@
-@import 'Link.mixins';
+@use 'Link.mixins' as link;
 
 .adv-link {
-  @include adv-link;
+  @include link.adv-link;
 }
