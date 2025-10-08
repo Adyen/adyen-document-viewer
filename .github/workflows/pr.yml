@@ -16,7 +16,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout the repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - run: npm i
       - run: npm run check:all
@@ -28,7 +28,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout the repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - run: npm i
       - run: npm run build
@@ -40,7 +40,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout the repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Install dependencies
         run: npm i
@@ -55,7 +55,7 @@ jobs:
       contents: read
     steps:
       - name: Checkout the repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Install dependencies
         run: npm i
