@@ -8,6 +8,7 @@ export enum ElementTypes {
   List = 'list',
   Table = 'table',
   InternalReference = 'internalReference',
+  Bigskip = 'bigskip',
 }
 
 export enum TextStyle {
@@ -53,6 +54,7 @@ export type InternalReference = {
   referencedLabel: string;
   displayText: Text;
 };
+type Bigskip = { type: ElementTypes.Bigskip };
 type DocumentViewerAnalytics = { onExpandSection?: (title: string) => void };
 
 export type Element =
@@ -69,6 +71,7 @@ export type Element =
   | TableRow
   | Table
   | InternalReference
+  | Bigskip
   | DocumentViewerAnalytics;
 
 // Props

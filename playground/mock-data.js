@@ -32,6 +32,9 @@ export default {
                   styles: [],
                 },
                 {
+                  type: 'bigskip',
+                },
+                {
                   type: 'weblink',
                   url: 'https://www.lipsum.com',
                   displayText: {
