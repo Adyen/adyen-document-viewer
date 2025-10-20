@@ -3,6 +3,7 @@ import { h, VNode } from 'preact';
 import { ContentElementsProps, Element, ElementTypes } from '../../types';
 import { getUniqueId } from '../../utils/id-generator';
 import Accordion from '../Accordion/Accordion';
+import Bigskip from '../Bigskip/Bigskip';
 import Chapter from '../Chapter/Chapter';
 import InternalReference from '../InternalReference/InternalReference';
 import List from '../ListElemennt/List';
@@ -22,6 +23,7 @@ const components = {
   table: Table,
   internalReference: InternalReference,
   breakline: 'br',
+  bigskip: Bigskip,
 };
 
 const getKey = (type: ElementTypes) => `key-${type}-${getUniqueId()}`;
@@ -75,6 +77,8 @@ const getProps = (element: Element, isTopLevel: boolean): any => {
         referencedLabel: element.referencedLabel,
         displayText: element.displayText,
       };
+    case ElementTypes.Bigskip:
+      return {};
     default:
       return null;
   }
