@@ -27,7 +27,7 @@ export interface TopLevelElement {
 
 // Elements
 export type Document = ElementWithInnerContent & { title: Text };
-type Chapter = ElementWithInnerContent & { type: ElementTypes.Chapter; title: Text };
+export type Chapter = ElementWithInnerContent & { type: ElementTypes.Chapter; title: Text };
 export type Section = ElementWithInnerContent & {
   type: ElementTypes.Section;
   title: Text;

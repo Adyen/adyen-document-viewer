@@ -94,4 +94,42 @@ describe('addSectionNumbering', () => {
       '1.1.1 Third Level',
     );
   });
+
+  it('should restart numbering for each chapter', () => {
+    const document: Document = {
+      title: { type: ElementTypes.Text, content: 'Multi-Chapter Document' },
+      contentElements: [
+        {
+          type: ElementTypes.Chapter,
+          title: { type: ElementTypes.Text, content: 'First Chapter' },
+          contentElements: [
+            {
+              type: ElementTypes.Section,
+              title: { type: ElementTypes.Text, content: 'Section One' },
+              contentElements: [],
+            },
+          ],
+        },
+        {
+          type: ElementTypes.Chapter,
+          title: { type: ElementTypes.Text, content: 'Second Chapter' },
+          contentElements: [
+            {
+              type: ElementTypes.Section,
+              title: { type: ElementTypes.Text, content: 'Another Section One' },
+              contentElements: [],
+            },
+          ],
+        },
+      ],
+    };
+
+    const result = addSectionNumbering(document);
+
+    const firstChapter = result.contentElements[0];
+    const secondChapter = result.contentElements[1];
+
+    expect(firstChapter.contentElements[0].title.content).toBe('1 Section One');
+    expect(secondChapter.contentElements[0].title.content).toBe('1 Another Section One');
+  });
 });
