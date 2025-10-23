@@ -1,10 +1,17 @@
-import { Document, Element, ElementTypes, Section } from '../types';
+import { Chapter, Document, Element, ElementTypes, Section } from '../types';
 
 type NumberingContext = {
   prefix: string;
   counter: number;
   isTopLevel: boolean;
 };
+
+/**
+ * Type guard to check if an element is a Chapter.
+ */
+function isChapter(element: Element): element is Chapter {
+  return 'type' in element && element.type === ElementTypes.Chapter;
+}
 
 /**
  * Type guard to check if an element is a Section.
@@ -16,7 +23,7 @@ function isSection(element: Element): element is Section {
 /**
  * Type guard to check if an element has nested content elements.
  */
-function hasContentElements(element: Element): element is Section {
+function hasContentElements(element: Element): element is Element & { contentElements: Element[] } {
   return 'contentElements' in element && Array.isArray(element.contentElements);
 }
 
@@ -46,7 +53,15 @@ function generateTitle(currentNumber: string, titleContent: string): string {
  * @returns A new element with updated numbering.
  */
 function addNumberingToSections(element: Element, context: NumberingContext): Element {
-  if (isSection(element)) {
+  if (isChapter(element)) {
+    const newContext: NumberingContext = { prefix: '', counter: 1, isTopLevel: true };
+    return {
+      ...element,
+      contentElements: element.contentElements.map((child) =>
+        addNumberingToSections(child, newContext),
+      ),
+    };
+  } else if (isSection(element)) {
     const currentNumber = generateNumbering(context);
 
     const updatedSection: Section = {
@@ -59,32 +74,24 @@ function addNumberingToSections(element: Element, context: NumberingContext): El
 
     context.counter += 1;
 
-    if (hasContentElements(element)) {
-      let subsectionCounter = 1;
-      updatedSection.contentElements = element.contentElements.map((child) => {
-        if (isSection(child)) {
-          const subsectionContext: NumberingContext = {
-            prefix: `${currentNumber}.`,
-            counter: subsectionCounter,
-            isTopLevel: false,
-          };
-          subsectionCounter += 1;
-          return addNumberingToSections(child, subsectionContext);
-        }
-        return child;
-      });
-    }
+    const subsectionContext: NumberingContext = {
+      prefix: `${currentNumber}.`,
+      counter: 1,
+      isTopLevel: false,
+    };
+
+    updatedSection.contentElements = element.contentElements.map((child) =>
+      addNumberingToSections(child, subsectionContext),
+    );
 
     return updatedSection;
-  }
-
-  if (hasContentElements(element)) {
+  } else if (hasContentElements(element)) {
     return {
       ...element,
       contentElements: element.contentElements.map((child) =>
         addNumberingToSections(child, context),
       ),
-    };
+    } as typeof element;
   }
 
   return element;
@@ -96,11 +103,11 @@ function addNumberingToSections(element: Element, context: NumberingContext): El
  * @returns A new document with updated numbering.
  */
 export function addSectionNumbering(document: Document): Document {
-  const context: NumberingContext = { prefix: '', counter: 1, isTopLevel: true };
+  const initialContext: NumberingContext = { prefix: '', counter: 1, isTopLevel: true };
   return {
     ...document,
     contentElements: document.contentElements.map((element) =>
-      addNumberingToSections(element, context),
+      addNumberingToSections(element, initialContext),
     ),
   };
 }
