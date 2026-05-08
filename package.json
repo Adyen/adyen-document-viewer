@@ -15,15 +15,15 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "start": "vite",
-    "build": "vite build && npm run types:build",
-    "check:all": "npm run types:check && npm run lint && npm run lint:style && npm run prettier",
+    "build": "vite build && pnpm types:build",
+    "check:all": "pnpm types:check && pnpm lint && pnpm lint:style && pnpm prettier",
     "lint": "eslint 'src/**/*.{js,ts,tsx}'",
-    "lint:fix": "npm run lint -- --fix",
+    "lint:fix": "pnpm lint --fix",
     "lint:style": "stylelint 'src/**/*.{scss,css}'",
     "lint:style:fix": "stylelint 'src/**/*.{scss,css}' --fix",
     "prettier": "prettier --config ./prettier.config.js --ignore-unknown --check \"**/*\"",
     "prettier:fix": "prettier --config ./prettier.config.js --ignore-unknown --write \"**/*\"",
-    "fix:all": "npm run prettier:fix && npm run lint:fix && npm run lint:style:fix",
+    "fix:all": "pnpm prettier:fix && pnpm lint:fix && pnpm lint:style:fix",
     "test": "playwright test",
     "test:debug": "playwright test --debug",
     "test:ui": "playwright test --ui",
@@ -61,6 +61,18 @@
     "typescript": "^5.8.3",
     "vite": "^7.0.6",
     "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=24",
+    "pnpm": ">=10.33.0"
+  },
+  "packageManager": "pnpm@10.33.0",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "esbuild",
+      "unrs-resolver"
+    ]
   },
   "license": "MIT",
   "repository": {
