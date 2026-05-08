@@ -1,0 +1,6 @@
+minimumReleaseAge: 30240 # 21 days, as per policy
+
+minimumReleaseAgeExclude:
+  - '@adyen/*'
+
+verifyDepsBeforeRun: install
