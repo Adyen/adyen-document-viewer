@@ -103,6 +103,7 @@ export default [
       // React rules
       'react/prop-types': 'off',
       'react/display-name': 'off',
+      'react/react-in-jsx-scope': 'off',
 
       // a11y
       'jsx-a11y/alt-text': 'error',

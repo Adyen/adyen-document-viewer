@@ -1,4 +1,4 @@
-import { h, VNode } from 'preact';
+import { VNode } from 'preact';
 
 import { ContentElementsProps, Element, ElementTypes } from '../../types';
 import { getUniqueId } from '../../utils/id-generator';

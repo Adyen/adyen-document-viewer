@@ -1,6 +1,5 @@
 import './CollapsibleContainer.scss';
 
-import { h } from 'preact';
 import { useEffect, useRef, useState } from 'preact/hooks';
 
 import { CollapsibleContainerProps } from './types';

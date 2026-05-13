@@ -1,5 +1,3 @@
-import { h } from 'preact';
-
 import { useReferenceContext } from '../../ReferenceContext/useReferenceContext';
 import { InternalReferenceProps } from '../../types';
 import { delay } from '../../utils/delay';

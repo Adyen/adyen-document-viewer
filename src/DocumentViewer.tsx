@@ -1,7 +1,6 @@
 import './DocumentViewer.scss';
 
 import cx from 'classnames';
-import { h } from 'preact';
 
 import ContentElements from './components/ContentElements/ContentElements';
 import Heading from './components/Heading/Heading';

@@ -1,6 +1,5 @@
 import './AccordionItem.scss';
 
-import { h } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 
 import { getUniqueId } from '../../utils/id-generator';
