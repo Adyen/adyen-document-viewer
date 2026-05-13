@@ -1,5 +1,4 @@
 import cx from 'classnames';
-import { h } from 'preact';
 
 import { ListItemProps } from './types';
 

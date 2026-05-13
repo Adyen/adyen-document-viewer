@@ -1,7 +1,6 @@
 import './Paragraph.scss';
 
 import cx from 'classnames';
-import { h } from 'preact';
 
 import { ParagraphProps } from '../../types';
 import ContentElements from '../ContentElements/ContentElements';

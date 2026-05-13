@@ -1,4 +1,4 @@
-import { ComponentChildren, h } from 'preact';
+import { ComponentChildren } from 'preact';
 import { useMemo, useState } from 'preact/hooks';
 
 import { ReferenceContext, ReferenceContextValue, References } from './ReferenceContext';

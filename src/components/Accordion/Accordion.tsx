@@ -1,7 +1,6 @@
 import './Accordion.scss';
 
 import cx from 'classnames';
-import { h } from 'preact';
 import { useState } from 'preact/hooks';
 
 import { AccordionContext } from './AccordionContext';

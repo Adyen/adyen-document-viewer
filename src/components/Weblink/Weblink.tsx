@@ -1,5 +1,3 @@
-import { h } from 'preact';
-
 import { WeblinkProps } from '../../types';
 import Link from '../Link/Link';
 import Text from '../Text/Text';

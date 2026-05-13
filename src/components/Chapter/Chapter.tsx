@@ -1,5 +1,3 @@
-import { h } from 'preact';
-
 import { ChapterProps } from '../../types';
 import ContentElements from '../ContentElements/ContentElements';
 import Heading from '../Heading/Heading';

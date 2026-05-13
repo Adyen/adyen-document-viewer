@@ -1,7 +1,5 @@
 import './Table.scss';
 
-import { h } from 'preact';
-
 import { TableProps } from '../../types';
 import { formatId } from '../../utils/format-id';
 import ContentElements from '../ContentElements/ContentElements';

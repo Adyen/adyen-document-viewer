@@ -1,7 +1,6 @@
 import './List.scss';
 
 import cx from 'classnames';
-import { h } from 'preact';
 
 import { ListProps } from './types';
 

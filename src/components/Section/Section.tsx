@@ -1,6 +1,5 @@
 import './Section.scss';
 
-import { h } from 'preact';
 import { useEffect, useState } from 'preact/hooks';
 
 import { useReferenceContext } from '../../ReferenceContext/useReferenceContext';

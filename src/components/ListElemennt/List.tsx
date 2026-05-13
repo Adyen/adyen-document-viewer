@@ -1,5 +1,3 @@
-import { h } from 'preact';
-
 import { ListProps } from '../../types';
 import ContentElements from '../ContentElements/ContentElements';
 import List from '../List/List';

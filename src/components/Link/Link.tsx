@@ -1,7 +1,7 @@
 import './Link.scss';
 
 import cx from 'classnames';
-import { FunctionalComponent, h } from 'preact';
+import { FunctionalComponent } from 'preact';
 
 import LinkProps from './types';
 

@@ -1,4 +1,4 @@
-import { h, render } from 'preact';
+import { render } from 'preact';
 
 import DocumentViewer from './DocumentViewer';
 import { AdyenDocumentViewerOptions, Document } from './types';
