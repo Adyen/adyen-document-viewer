@@ -26,6 +26,7 @@ jobs:
     environment: release
     permissions:
       contents: read
+      id-token: write
     steps:
       - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
       - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
@@ -34,6 +35,4 @@ jobs:
           node-version: 24
       - run: pnpm install
       - run: pnpm build
-      - run: pnpm publish --access public
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_ADYEN_DOCUMENT_VIEWER_TOKEN}}
+      - run: pnpm publish --access public --provenance
