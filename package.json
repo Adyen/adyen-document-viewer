@@ -30,7 +30,8 @@
     "test:unit": "vitest",
     "types:build": "tsc --project tsconfig-build.json",
     "types:check": "tsc",
-    "types:watch": "tsc --watch --preserveWatchOutput"
+    "types:watch": "tsc --watch --preserveWatchOutput",
+    "submit": "bash ./scripts/pr-create.sh"
   },
   "dependencies": {
     "classnames": "^2.5.1",
