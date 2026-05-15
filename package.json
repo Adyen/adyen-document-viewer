@@ -85,8 +85,7 @@
     "dist/adyen-document-viewer.min.css",
     "dist/index.d.ts",
     "dist/types/index.d.ts",
-    "LICENSE",
-    "README"
+    "LICENSE"
   ],
   "exports": {
     ".": {
