@@ -35,4 +35,4 @@ jobs:
           node-version: 24
       - run: pnpm install
       - run: pnpm build
-      - run: pnpm publish --access public --provenance
+      - run: pnpm publish  --no-git-checks --provenance
