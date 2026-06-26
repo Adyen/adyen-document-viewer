@@ -8,20 +8,7 @@ on:
     types: [created]
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    steps:
-      - uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5
-      - uses: pnpm/action-setup@f40ffcd9367d9f12939873eb1018b921a783ffaa # v4
-      - uses: actions/setup-node@a0853c24544627f65ddf259abe73b1d18a591444 # v5
-        with:
-          node-version: 24
-      - run: pnpm install
-
   publish-npm:
-    needs: build
     runs-on: ubuntu-latest
     environment: release
     permissions:
@@ -35,4 +22,4 @@ jobs:
           node-version: 24
       - run: pnpm install
       - run: pnpm build
-      - run: pnpm publish  --no-git-checks --provenance
+      - run: pnpm publish --no-git-checks --provenance
