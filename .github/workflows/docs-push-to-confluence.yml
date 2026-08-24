@@ -1,0 +1,30 @@
+name: Documentation / push to Confluence
+
+on:
+  push:
+    branches:
+      - 'main'
+  workflow_dispatch:
+concurrency:
+  group: confluence-docs-push
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    environment: confluence-docs
+    env:
+      CONFLUENCE_BASE_URL: ${{ secrets.CONFLUENCE_BASE_URL }}
+      CONFLUENCE_EMAIL: ${{ secrets.CONFLUENCE_EMAIL }}
+      CONFLUENCE_API_TOKEN: ${{ secrets.CONFLUENCE_API_TOKEN }}
+
+    steps:
+      - name: Checkout the pull request
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Push documentation to Confluence
+        uses: Adyen/github-actions-internal/markdown-confluence-sync@main
